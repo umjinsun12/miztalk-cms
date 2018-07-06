@@ -1,17 +1,12 @@
 var express = require('express');
 var BoardContents = require('../models/boardsSchema'); //db를 사용하기 위한 변수
+var request = require('request');
 var fs = require('fs');
 var multer = require('multer'); // 파일 저장을 위한  multer
 var upload = multer({dest:'./tmp/'}); // multer 경로 설정, 파일이 업로드 되면 먼저 임시 폴더로 가서 저장됨
 var router = express.Router();
 
 router.get('/', function(req,res){
-    // 처음 index로 접속 했을시 나오는 부분
-    // db에서 게시글 리스트 가져와서 출력
-    // pagination 추가 -> 11/17
-    // page는 1-5까지 보여줌 -> db에서 총 갯수 잡아와서 10으로 나눠서 올림해야함
-    // 한페이지에 10개의 게시글: limit: 10, skip: (page-1)*10 이면 될 듯
-    // page number는 param으로 받아오기 가장 처음엔 param 없으니까 그땐 자동 1로 설정
 
     var page = req.param('page');
     if(page == null) {page = 1;}
@@ -77,30 +72,64 @@ router.post('/', upload.array('UploadFile'),function(req, res){
     var addNewTitle = req.body.addContentSubject;
     var addNewWriter = req.body.addContentWriter;
     var addNewContent = req.body.addContents;
+    var userToken = req.body.userToken;
     var upFile = req.files; // 업로드 된 파일을 받아옴
+    if(addNewTitle == undefined || addNewWriter == undefined || addNewContent == undefined || userToken == undefined)
+        throw new Error('fail_parameter_null');
 
     var modTitle = req.body.modContentSubject;
     var modContent = req.body.modContents;
     var modId = req.body.modId;
 
-    if(mode == 'add') {
-        if (isSaved(upFile)) { // 파일이 제대로 업로드 되었는지 확인 후 디비에 저장시키게 됨
-            addBoard(addNewTitle, addNewWriter, addNewContent, upFile);
+    validateToken(userToken).then(function(data){
+        if(mode == 'add') {
+            if (isSaved(upFile)) { // 파일이 제대로 업로드 되었는지 확인 후 디비에 저장시키게 됨
+                addBoard(addNewTitle, addNewWriter, addNewContent, upFile);
+                res.json({
+                    status : 'success',
+                    msg : 'success_write_post'
+                });
+            } else {
+                res.json({
+                    status : 'fail',
+                    msg : 'fail_file_saveerr'
+                });
+            }
+        } else {
+            modBoard(modId, modTitle, modContent);
             res.json({
                 status : 'success',
-                msg : 'success_write_post'
+                msg : 'success_modify_post'
             });
-        } else {
-            console.log("파일이 저장되지 않았습니다!");
         }
-    } else {
-        modBoard(modId, modTitle, modContent);
+    }).catch(function(err){
         res.json({
-            status : 'success',
-            msg : 'success_modify_post'
+            status : 'fail',
+            msg :err
         });
-    }
+        throw new Error(err);
+    });
 });
+
+router.post('/test', function(req, res){
+    var userToken = req.body.userToken;
+
+    var headers = {
+        'Authorization' : 'Bearer ' + userToken
+    };
+
+    var options = {
+        url : 'http://miztalk.kr/wp-json/jwt-auth/v1/token/validate?token='  + userToken,
+        method : 'POST',
+        headers : headers
+    };
+
+    request(options, function(err, response, body){
+        res.json(JSON.parse(body));
+    });
+});
+
+
 
 router.get('/image/:path', function(req, res){
     // file download
@@ -114,14 +143,57 @@ router.post('/reply', function(req, res){
     var reply_writer = req.body.replyWriter;
     var reply_comment = req.body.replyComment;
     var reply_id = req.body.replyId;
+    if(reply_writer == undefined || reply_comment == undefined || reply_id == undefined )
+        throw new Error('fail_parameter_null');
 
-    addComment(reply_id, reply_writer, reply_comment);
-
-    res.json({
-        status : 'success',
-        msg : 'success_reply_post'
+    validateToken(userToken).then(function(data) {
+        addComment(reply_id, reply_writer, reply_comment);
+        res.json({
+            status: 'success',
+            msg: 'success_reply_post'
+        });
+    }).catch(function(err){
+        res.json({
+            status : 'fail',
+            msg :err
+        });
+        throw new Error(err);
     });
 });
+
+router.post('/likes', function(req, res){
+    // 댓글 다는 부분
+    var reply_writer = req.body.likesWriter;
+    var reply_id = req.body.likesId;
+    if(reply_writer == undefined || reply_id == undefined)
+        throw new Error('fail_parameter_null');
+
+    validateToken(userToken).then(function(data) {
+        BoardContents.findOne({_id: reply_id}, function(err, rawContent){
+            if(err) throw err;
+            var likechk = rawContent.likeslist.indexOf(reply_writer);
+
+            if(likechk == -1 || likechk == undefined){
+                BoardContents.update({_id: reply_id}, {$push: {likeslist: reply_writer}}, function (err) {
+                    if (err) throw err;
+                    res.json({
+                        status : 'success',
+                        msg : 'success_reply_post'
+                    });
+                });
+            }else{
+                throw new Error('fail_already_likes');
+            }
+        });
+    }).catch(function(err){
+        res.json({
+            status : 'fail',
+            msg :err
+        });
+        throw new Error(err);
+    });
+});
+
 
 router.get('/reply', function(req, res) {
     // 댓글 ajax로 페이징 하는 부분
@@ -162,7 +234,7 @@ router.get('/view', function(req, res){
     BoardContents.findOne({_id:contentId}, function(err, rawContent){
         if(err) throw err;
         rawContent.count += 1;
-        var reply_pg = Math.ceil(rawContent.comments.length/5);
+        var reply_pg = Math.ceil(rawContent.comments.length/10);
 
         rawContent.save(function(err){
             if(err) throw err;
@@ -176,19 +248,31 @@ router.get('/view', function(req, res){
     })
 });
 
-router.get('/password', function(req, res){
-    // 글 비밀번호 찾아오기
-    var id = req.param('id');
-
-    BoardContents.findOne({_id: id}, function(err, rawContents){
-        res.send(rawContents.password);
-    });
-});
 
 
 module.exports = router;
 
 
+function validateToken(userToken){
+    var headers = {
+        'Authorization' : 'Bearer ' + userToken
+    };
+
+    var options = {
+        url : 'http://miztalk.kr/wp-json/jwt-auth/v1/token/validate?token='  + userToken,
+        method : 'POST',
+        headers : headers
+    };
+    return new Promise(function(resolve, reject){
+        request(options, function(err, response, body){
+             var resp = JSON.parse(body);
+             if(resp.data.status != 200)
+                 reject(resp);
+             else
+                 resolve(resp);
+        });
+    });
+}
 
 function addBoard(title, writer, content, upFile){
     var newContent = content.replace(/\r\n/gi, "\\r\\n");
@@ -251,6 +335,7 @@ function addComment(id, writer, comment) {
         });
     });
 }
+
 function getFileDate(date) {
     var year = date.getFullYear();
     var month = date.getMonth()+1;
