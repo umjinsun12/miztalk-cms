@@ -165,6 +165,7 @@ router.post('/reply', function(req, res){
 router.post('/likes', function(req, res){
     // 좋아요 하는 부분
     var reply_id = req.body.likesId;
+    var userToken = req.body.userToken;
     if(reply_id == undefined)
         throw new Error('fail_parameter_null');
 
@@ -172,18 +173,24 @@ router.post('/likes', function(req, res){
         var reply_writer = data.user.display_name;
         BoardContents.findOne({_id: reply_id}, function(err, rawContent){
             if(err) throw err;
-            var likechk = rawContent.likeslist.indexOf(reply_writer);
+            var likechk = rawContent.likelist.indexOf(reply_writer);
 
             if(likechk == -1 || likechk == undefined){
-                BoardContents.update({_id: reply_id}, {$push: {likeslist: reply_writer}}, function (err) {
+                BoardContents.update({_id: reply_id}, {$push: {likelist: reply_writer}}, function (err) {
                     if (err) throw err;
                     res.json({
                         status : 'success',
-                        msg : 'success_reply_post'
+                        msg : 'success_likes_post'
                     });
                 });
             }else{
-                throw new Error('fail_already_likes');
+                BoardContents.update({_id: reply_id}, {$pull: {likelist: reply_writer}}, function(err){
+                    if (err) throw err;
+                    res.json({
+                        status : 'success',
+                        msg : 'succes_likes_undo'
+                    });
+                });
             }
         });
     }).catch(function(err){
