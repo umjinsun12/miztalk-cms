@@ -1,5 +1,6 @@
 var express = require('express');
 var BoardContents = require('../models/boardsSchema'); //db를 사용하기 위한 변수
+var BoardCategory = require('../constant/boardCategory');
 var request = require('request');
 var fs = require('fs');
 var multer = require('multer'); // 파일 저장을 위한  multer
@@ -134,6 +135,13 @@ router.post('/test', function(req, res){
 });
 
 
+router.get('/category', function(req,res){
+    var category = BoardCategory();
+    res.json(
+        category
+    );
+});
+
 
 router.get('/image/:path', function(req, res){
     // file download
@@ -146,6 +154,7 @@ router.post('/reply', function(req, res){
     // 댓글 다는 부분
     var reply_comment = req.body.replyComment;
     var reply_id = req.body.replyId;
+    var userToken = req.body.userToken;
     if(reply_comment == undefined || reply_id == undefined )
         throw new Error('fail_parameter_null');
 
@@ -236,11 +245,27 @@ router.get('/delete', function(req, res) {
     });
 });
 
+
+router.post('/deleteReply', function(req, res){
+    var contentId = req.body.postid;
+    var replyId = req.body.replyid;
+
+    BoardContents.update({_id: contentId}, { $pull: { comments : { _id: replyId } } } ,function(err){
+        if(err) throw err;
+        res.json({
+            status : 'success',
+            msg : 'success_post_delete'
+        })
+    });
+});
+
 router.get('/view', function(req, res){
     // 글 보는 부분. 글 내용을 출력하고 조회수를 늘려줘야함
     // 댓글 페이지 추가 해줌, 5개씩 출력함
 
     var contentId = req.param('id');
+    if(contentId == null || contentId == undefined)
+        throw new Error('fail_parameter_null');
 
     BoardContents.findOne({_id:contentId}, function(err, rawContent){
         if(err) throw err;
@@ -344,7 +369,7 @@ function addComment(id, writer, comment) {
     BoardContents.findOne({_id: id}, function(err, rawContent){
         if(err) throw err;
 
-        rawContent.comments.unshift({name:writer, memo: comment});
+        rawContent.comments.push({name:writer, memo: comment});
         rawContent.save(function(err){
             if(err) throw err;
         });
