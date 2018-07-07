@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose'); //**** mongodb를 연결하기 위함 ****/
+var http = require('http');
 
 var indexRouter = require('./routes/index');
 var postsRouter = require('./routes/posts');
@@ -63,6 +64,11 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+
+http.createServer(app).listen(3030, function(){
+    console.log('success miztalk server on http://localhost:3030')
+})
 
 
 module.exports = app;

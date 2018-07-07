@@ -163,7 +163,7 @@ router.post('/reply', function(req, res){
 });
 
 router.post('/likes', function(req, res){
-    // 댓글 다는 부분
+    // 좋아요 하는 부분
     var reply_id = req.body.likesId;
     if(reply_id == undefined)
         throw new Error('fail_parameter_null');
