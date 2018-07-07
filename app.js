@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose'); //**** mongodb를 연결하기 위함 ****/
 var http = require('http');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var postsRouter = require('./routes/posts');
@@ -23,6 +24,7 @@ db.once('open', function() {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -65,10 +67,9 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
-http.createServer(app).listen(3030, function(){
-    console.log('success miztalk server on http://localhost:3030')
-})
+app.listen(3030, function(){
+   console.log("miztalk server - localhost:3030");
+});
 
 
 module.exports = app;
