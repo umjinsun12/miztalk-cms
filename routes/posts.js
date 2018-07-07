@@ -9,20 +9,22 @@ var router = express.Router();
 router.get('/', function(req,res){
 
     var page = req.param('page');
+    var category = req.param('category');
     if(page == null) {page = 1;}
+    if(category == null) {category = 0;}
 
     var skipSize = (page-1)*10;
     var limitSize = 10;
     var pageNum = 1;
 
-    BoardContents.count({deleted:false},
+    BoardContents.count({deleted:false, category: category},
         function(err, totalCount){
         // db에서 날짜 순으로 데이터들을 가져옴
         if(err)
             throw err;
 
         pageNum = Math.ceil(totalCount/limitSize);
-        BoardContents.find({deleted:false}).sort({date:-1}).skip(skipSize).limit(limitSize).exec(function(err, pageContents) {
+        BoardContents.find({deleted:false,category: category}).sort({date:-1}).skip(skipSize).limit(limitSize).exec(function(err, pageContents) {
             if(err) throw err;
             res.json({
                 title: "Board",
@@ -73,6 +75,7 @@ router.post('/', upload.array('UploadFile'),function(req, res){
     var addNewWriter;
     var addNewContent = req.body.addContents;
     var userToken = req.body.userToken;
+    var addCategory = req.body.addCategory;
     var upFile = req.files; // 업로드 된 파일을 받아옴
     if(addNewTitle == undefined  || addNewContent == undefined || userToken == undefined)
         throw new Error('fail_parameter_null');
@@ -85,7 +88,7 @@ router.post('/', upload.array('UploadFile'),function(req, res){
         if(mode == 'add') {
             addNewWriter = data.user.display_name; // 유저 데이터를 신뢰하지 않는다.
             if (isSaved(upFile)) { // 파일이 제대로 업로드 되었는지 확인 후 디비에 저장시키게 됨
-                addBoard(addNewTitle, addNewWriter, addNewContent, upFile);
+                addBoard(addNewTitle, addNewWriter, addNewContent, addCategory, upFile);
                 res.json({
                     status : 'success',
                     msg : 'success_write_post'
@@ -282,13 +285,17 @@ function validateToken(userToken){
     });
 }
 
-function addBoard(title, writer, content, upFile){
+function addBoard(title, writer, content, category, upFile){
     var newContent = content.replace(/\r\n/gi, "\\r\\n");
+    if(category == undefined || category == 0)
+        category = 0;
 
+    console.log(category);
     var newBoardContents = new BoardContents;
     newBoardContents.writer = writer;
     newBoardContents.title = title;
     newBoardContents.contents = newContent;
+    newBoardContents.category = category;
 
     newBoardContents.save(function (err) {
         if (err) throw err;

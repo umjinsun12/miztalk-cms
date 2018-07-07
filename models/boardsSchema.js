@@ -5,7 +5,7 @@ var boardSchema = mongoose.Schema({
     title: String,
     contents: String,
     image : [String],
-    category : Number,
+    category : {type:Number, default:0},
     likelist : [String],
     comments: [{
         name: String,
