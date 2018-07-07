@@ -70,11 +70,11 @@ router.post('/', upload.array('UploadFile'),function(req, res){
     var mode = req.param('mode');
 
     var addNewTitle = req.body.addContentSubject;
-    var addNewWriter = req.body.addContentWriter;
+    var addNewWriter;
     var addNewContent = req.body.addContents;
     var userToken = req.body.userToken;
     var upFile = req.files; // 업로드 된 파일을 받아옴
-    if(addNewTitle == undefined || addNewWriter == undefined || addNewContent == undefined || userToken == undefined)
+    if(addNewTitle == undefined  || addNewContent == undefined || userToken == undefined)
         throw new Error('fail_parameter_null');
 
     var modTitle = req.body.modContentSubject;
@@ -83,6 +83,7 @@ router.post('/', upload.array('UploadFile'),function(req, res){
 
     validateToken(userToken).then(function(data){
         if(mode == 'add') {
+            addNewWriter = data.user.display_name; // 유저 데이터를 신뢰하지 않는다.
             if (isSaved(upFile)) { // 파일이 제대로 업로드 되었는지 확인 후 디비에 저장시키게 됨
                 addBoard(addNewTitle, addNewWriter, addNewContent, upFile);
                 res.json({
@@ -119,7 +120,7 @@ router.post('/test', function(req, res){
     };
 
     var options = {
-        url : 'http://miztalk.kr/wp-json/jwt-auth/v1/token/validate?token='  + userToken,
+        url : 'http://miztalk.kr/wp-json/jwt-auth/v1/token/validate_userid?token='  + userToken,
         method : 'POST',
         headers : headers
     };
@@ -140,13 +141,13 @@ router.get('/image/:path', function(req, res){
 
 router.post('/reply', function(req, res){
     // 댓글 다는 부분
-    var reply_writer = req.body.replyWriter;
     var reply_comment = req.body.replyComment;
     var reply_id = req.body.replyId;
-    if(reply_writer == undefined || reply_comment == undefined || reply_id == undefined )
+    if(reply_comment == undefined || reply_id == undefined )
         throw new Error('fail_parameter_null');
 
     validateToken(userToken).then(function(data) {
+        reply_writer = data.user.display_name; // 유저 데이터를 신뢰하지 않는다.
         addComment(reply_id, reply_writer, reply_comment);
         res.json({
             status: 'success',
@@ -163,12 +164,12 @@ router.post('/reply', function(req, res){
 
 router.post('/likes', function(req, res){
     // 댓글 다는 부분
-    var reply_writer = req.body.likesWriter;
     var reply_id = req.body.likesId;
-    if(reply_writer == undefined || reply_id == undefined)
+    if(reply_id == undefined)
         throw new Error('fail_parameter_null');
 
     validateToken(userToken).then(function(data) {
+        var reply_writer = data.user.display_name;
         BoardContents.findOne({_id: reply_id}, function(err, rawContent){
             if(err) throw err;
             var likechk = rawContent.likeslist.indexOf(reply_writer);
@@ -259,7 +260,7 @@ function validateToken(userToken){
     };
 
     var options = {
-        url : 'http://miztalk.kr/wp-json/jwt-auth/v1/token/validate?token='  + userToken,
+        url : 'http://miztalk.kr/wp-json/jwt-auth/v1/token/validate_userid?token='  + userToken,
         method : 'POST',
         headers : headers
     };
