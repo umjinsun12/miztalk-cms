@@ -66,6 +66,7 @@ router.get('/search', function(req, res){
 });
 
 
+
 router.post('/', upload.array('UploadFile'),function(req, res){
     //field name은 form의 input file의 name과 같아야함
     // 글 작성하고 submit하게 되면 저장이 되는 부분
@@ -115,6 +116,87 @@ router.post('/', upload.array('UploadFile'),function(req, res){
         throw new Error(err);
     });
 });
+
+router.get('/shopReview', function(req,res){
+
+    var page = req.param('page');
+    var postid = req.param('postid');
+    if(page == null) {page = 1;}
+    if(postid == null) {postid = 0;}
+
+    var skipSize = (page-1)*10;
+    var limitSize = 10;
+    var pageNum = 1;
+
+    BoardContents.count({deleted:false, category: category},
+        function(err, totalCount){
+            // db에서 날짜 순으로 데이터들을 가져옴
+            if(err)
+                throw err;
+
+            pageNum = Math.ceil(totalCount/limitSize);
+            BoardContents.find({deleted:false,postid: postid}).sort({date:-1}).skip(skipSize).limit(limitSize).exec(function(err, pageContents) {
+                if(err) throw err;
+                res.json({
+                    title: "shopReview",
+                    contents: pageContents,
+                    pagination: pageNum,
+                    searchWord: ''
+                });
+            });
+        });
+});
+
+router.post('/shopReview', upload.array('UploadFile'),function(req, res){
+    //field name은 form의 input file의 name과 같아야함
+    // 글 작성하고 submit하게 되면 저장이 되는 부분
+    // 글 수정하고 submit하면 수정된 결과가 저장되는 부분
+    var mode = req.param('mode');
+
+    var addNewWriter;
+    var addNewContent = req.body.addContents;
+    var userToken = req.body.userToken;
+    var addCategory = 9090;
+    var postId = req.body.postId;
+    var upFile = req.files; // 업로드 된 파일을 받아옴
+    if(addNewContent == undefined || userToken == undefined)
+        throw new Error('fail_parameter_null');
+
+    var modTitle = req.body.modContentSubject;
+    var modContent = req.body.modContents;
+    var modId = req.body.modId;
+
+    validateToken(userToken).then(function(data){
+        if(mode == 'add') {
+            addNewWriter = data.user.display_name; // 유저 데이터를 신뢰하지 않는다.
+            if (isSaved(upFile)) { // 파일이 제대로 업로드 되었는지 확인 후 디비에 저장시키게 됨
+                addShopReview(addNewWriter, addNewContent, addCategory, postId, upFile);
+                res.json({
+                    status : 'success',
+                    msg : 'success_write_post'
+                });
+            } else {
+                res.json({
+                    status : 'fail',
+                    msg : 'fail_file_saveerr'
+                });
+            }
+        } else {
+            modBoard(modId, modTitle, modContent);
+            res.json({
+                status : 'success',
+                msg : 'success_modify_post'
+            });
+        }
+    }).catch(function(err){
+        res.json({
+            status : 'fail',
+            msg :err
+        });
+        throw new Error(err);
+    });
+});
+
 
 router.post('/test', function(req, res){
     var userToken = req.body.userToken;
@@ -348,6 +430,45 @@ function addBoard(title, writer, content, category, upFile){
         });
     });
 }
+
+function addShopReview(writer, content, category, postId ,upFile){
+    var newContent = content.replace(/\r\n/gi, "\\r\\n");
+    if(category == undefined || category == 0)
+        category = 9090;
+
+    var newBoardContents = new BoardContents;
+    newBoardContents.writer = writer;
+    newBoardContents.contents = newContent;
+    newBoardContents.category = category;
+    newBoardContents.postId = postId;
+
+    newBoardContents.save(function (err) {
+        if (err) throw err;
+        BoardContents.findOne({_id: newBoardContents._id}, {_id: 1}, function (err, newBoardId) {
+            if (err) throw err;
+
+            if (upFile != null) {
+                var renaming = renameUploadFile(newBoardId.id, upFile);
+
+                for (var i = 0; i < upFile.length; i++) {
+                    fs.rename(renaming.tmpname[i], renaming.fsname[i], function (err) {
+                        if (err) {
+                            console.log(err);
+                            return;
+                        }
+                    });
+                }
+
+                for (var i = 0; i < upFile.length; i++) {
+                    BoardContents.update({_id: newBoardId.id}, {$push: {image: renaming.fullname[i]}}, function (err) {
+                        if (err) throw err;
+                    });
+                }
+            }
+        });
+    });
+}
+
 
 function modBoard(id, title, content) {
     var modContent = content.replace(/\r\n/gi, "\\r\\n");

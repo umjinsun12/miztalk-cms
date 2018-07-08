@@ -12,6 +12,8 @@ var boardSchema = mongoose.Schema({
         memo: String,
         date: {type: Date, default: Date.now}
     }],
+    rating : {type:Number, default: 5},
+    postid : Number,
     count: {type:Number, default: 0},
     date: {type: Date, default: Date.now},
     updated: [{contents: String, date:{type: Date, default: Date.now}}],

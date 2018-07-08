@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="870277d3-e7a6-4ed4-9ef8-81f3a71eac37" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/boardsSchema.js" afterPath="$PROJECT_DIR$/models/boardsSchema.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/posts.js" afterPath="$PROJECT_DIR$/routes/posts.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,8 +29,8 @@
       <file leaf-file-name="boardsSchema.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/boardsSchema.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="285">
+              <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -55,33 +56,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layout.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="posts.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/posts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="71" column="38" lean-forward="true" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
+            <state relative-caret-position="247">
+              <caret line="315" column="42" lean-forward="true" selection-start-line="315" selection-start-column="42" selection-end-line="315" selection-end-column="42" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="5b4140cf9477284b1098f2bb_2018787387_tmp.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upload/5b4140cf9477284b1098f2bb_2018787387_tmp.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="5b410f009477284b1098f2b6_2018784536_tmp.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upload/5b410f009477284b1098f2b6_2018784536_tmp.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -113,9 +108,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>res</find>
-      <find>boards</find>
-      <find>/boards</find>
       <find>res.</find>
       <find>LIMIT_UNEXPECTED_FILE</find>
       <find>isSaved</find>
@@ -135,13 +127,17 @@
       <find>usersRouter</find>
       <find>modBoard</find>
       <find>find({</find>
-      <find>addBoard</find>
       <find>category:</find>
       <find>/reply</find>
       <find>display_name</find>
       <find>addComment</find>
       <find>/likes</find>
+      <find>/image</find>
       <find>category</find>
+      <find>addBoard</find>
+      <find>shopReview</find>
+      <find>/shopReview</find>
+      <find>/dele</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,7 +180,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="113" />
+    <option name="x" value="155" />
     <option name="y" value="-8" />
     <option name="width" value="1273" />
     <option name="height" value="1047" />
@@ -354,7 +350,7 @@
       <updated>1530812012381</updated>
       <workItem from="1530812025921" duration="4939000" />
       <workItem from="1530884448607" duration="192000" />
-      <workItem from="1530884663387" duration="40538000" />
+      <workItem from="1530884663387" duration="48422000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1530884760529</created>
@@ -412,11 +408,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530961189975</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="커뮤니티 기능 추가">
+      <created>1530988359539</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1530988359539</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45669000" />
+    <option name="totallyTimeSpent" value="53553000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -477,55 +480,57 @@
     <MESSAGE value="cors 설정" />
     <MESSAGE value="like 취소 확인 기능 추가" />
     <MESSAGE value="list category 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="list category 추가" />
+    <MESSAGE value="커뮤니티 기능 추가" />
+    <MESSAGE value="shopping Comment 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="shopping Comment 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>342</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>147</line>
+          <line>229</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>119</line>
+          <line>201</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>187</line>
+          <line>269</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>138</line>
+          <line>220</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>161</line>
+          <line>243</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>168</line>
+          <line>250</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/posts.js</url>
+          <line>79</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="22" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -636,6 +641,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/upload/5b410f009477284b1098f2b6_2018784536_tmp.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload/5b4140cf9477284b1098f2bb_2018787387_tmp.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/constant/boardCategory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -646,16 +661,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/boardsSchema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="285">
+          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/posts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="71" column="38" lean-forward="true" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
+        <state relative-caret-position="247">
+          <caret line="315" column="42" lean-forward="true" selection-start-line="315" selection-start-column="42" selection-end-line="315" selection-end-column="42" />
           <folding />
         </state>
       </provider>
