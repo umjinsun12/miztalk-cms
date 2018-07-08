@@ -117,7 +117,7 @@ router.post('/', upload.array('UploadFile'),function(req, res){
     });
 });
 
-router.get('/shopReview', function(req,res){
+router.get('/showReview', function(req,res){
 
     var page = req.param('page');
     var postid = req.param('postid');
@@ -147,7 +147,7 @@ router.get('/shopReview', function(req,res){
         });
 });
 
-router.post('/shopReview', upload.array('UploadFile'),function(req, res){
+router.post('/showReview', upload.array('UploadFile'),function(req, res){
     //field name은 form의 input file의 name과 같아야함
     // 글 작성하고 submit하게 되면 저장이 되는 부분
     // 글 수정하고 submit하면 수정된 결과가 저장되는 부분
@@ -159,18 +159,19 @@ router.post('/shopReview', upload.array('UploadFile'),function(req, res){
     var addCategory = 9090;
     var postId = req.body.postId;
     var upFile = req.files; // 업로드 된 파일을 받아옴
+    var rating = req.body.rating;
     if(addNewContent == undefined || userToken == undefined)
         throw new Error('fail_parameter_null');
 
-    var modTitle = req.body.modContentSubject;
     var modContent = req.body.modContents;
     var modId = req.body.modId;
+    var modRating = req.body.modRating;
 
     validateToken(userToken).then(function(data){
         if(mode == 'add') {
             addNewWriter = data.user.display_name; // 유저 데이터를 신뢰하지 않는다.
             if (isSaved(upFile)) { // 파일이 제대로 업로드 되었는지 확인 후 디비에 저장시키게 됨
-                addShopReview(addNewWriter, addNewContent, addCategory, postId, upFile);
+                addReview(addNewWriter, addNewContent, addCategory, rating,postId, upFile);
                 res.json({
                     status : 'success',
                     msg : 'success_write_post'
@@ -182,7 +183,7 @@ router.post('/shopReview', upload.array('UploadFile'),function(req, res){
                 });
             }
         } else {
-            modBoard(modId, modTitle, modContent);
+            modReview(modId, modContent, modRating);
             res.json({
                 status : 'success',
                 msg : 'success_modify_post'
@@ -196,6 +197,7 @@ router.post('/shopReview', upload.array('UploadFile'),function(req, res){
         throw new Error(err);
     });
 });
+
 
 
 router.post('/test', function(req, res){
@@ -431,7 +433,7 @@ function addBoard(title, writer, content, category, upFile){
     });
 }
 
-function addShopReview(writer, content, category, postId ,upFile){
+function addReview(writer, content, category, rating, postId ,upFile){
     var newContent = content.replace(/\r\n/gi, "\\r\\n");
     if(category == undefined || category == 0)
         category = 9090;
@@ -441,6 +443,7 @@ function addShopReview(writer, content, category, postId ,upFile){
     newBoardContents.contents = newContent;
     newBoardContents.category = category;
     newBoardContents.postId = postId;
+    newBoardContents.rating = rating;
 
     newBoardContents.save(function (err) {
         if (err) throw err;
@@ -482,6 +485,22 @@ function modBoard(id, title, content) {
     });
 
     BoardContents.update({_id:id}, {$set: {title: title, contents: modContent, date: Date.now()}}, function(err) {
+        if(err) throw err;
+    });
+}
+
+function modReview(id, content, rating) {
+    var modContent = content.replace(/\r\n/gi, "\\r\\n");
+
+    BoardContents.findOne({_id:id}, function(err, originContent){
+        if(err) throw err;
+        originContent.updated.push({rating: originContent.rating, contents:originContent.contents});
+        originContent.save(function(err){
+            if(err) throw err;
+        });
+    });
+
+    BoardContents.update({_id:id}, {$set: {rating: rating, contents: modContent, date: Date.now()}}, function(err) {
         if(err) throw err;
     });
 }
