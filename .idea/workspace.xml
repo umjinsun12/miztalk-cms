@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="870277d3-e7a6-4ed4-9ef8-81f3a71eac37" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/boardsSchema.js" afterPath="$PROJECT_DIR$/models/boardsSchema.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/posts.js" afterPath="$PROJECT_DIR$/routes/posts.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -59,8 +58,8 @@
       <file leaf-file-name="posts.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/posts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="315" column="42" lean-forward="true" selection-start-line="315" selection-start-column="42" selection-end-line="315" selection-end-column="42" />
+            <state relative-caret-position="337">
+              <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,9 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>res.</find>
-      <find>LIMIT_UNEXPECTED_FILE</find>
-      <find>isSaved</find>
       <find>renameUploadFile</find>
       <find>file</find>
       <find>download</find>
@@ -125,7 +121,6 @@
       <find>/test</find>
       <find>va</find>
       <find>usersRouter</find>
-      <find>modBoard</find>
       <find>find({</find>
       <find>category:</find>
       <find>/reply</find>
@@ -133,11 +128,15 @@
       <find>addComment</find>
       <find>/likes</find>
       <find>/image</find>
-      <find>category</find>
       <find>addBoard</find>
       <find>shopReview</find>
       <find>/shopReview</find>
       <find>/dele</find>
+      <find>addReview</find>
+      <find>modBoard</find>
+      <find>postid</find>
+      <find>category</find>
+      <find>/showR</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,7 +179,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="155" />
+    <option name="x" value="42" />
     <option name="y" value="-8" />
     <option name="width" value="1273" />
     <option name="height" value="1047" />
@@ -350,7 +349,7 @@
       <updated>1530812012381</updated>
       <workItem from="1530812025921" duration="4939000" />
       <workItem from="1530884448607" duration="192000" />
-      <workItem from="1530884663387" duration="48422000" />
+      <workItem from="1530884663387" duration="55332000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1530884760529</created>
@@ -415,11 +414,25 @@
       <option name="project" value="LOCAL" />
       <updated>1530988359539</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="shopping Comment 추가">
+      <created>1531036153512</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1531036153512</updated>
+    </task>
+    <task id="LOCAL-00011" summary="review 수정">
+      <created>1531037908879</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1531037908879</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53553000" />
+    <option name="totallyTimeSpent" value="60463000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -441,13 +454,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26066098" sideWeight="0.5225718" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20457019" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26066098" sideWeight="0.53409094" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20457019" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26066098" sideWeight="0.47742817" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26066098" sideWeight="0.4659091" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -482,44 +495,46 @@
     <MESSAGE value="list category 추가" />
     <MESSAGE value="커뮤니티 기능 추가" />
     <MESSAGE value="shopping Comment 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="shopping Comment 추가" />
+    <MESSAGE value="review 수정" />
+    <MESSAGE value="review 삭제 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="review 삭제 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>229</line>
+          <line>231</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>201</line>
+          <line>203</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>269</line>
+          <line>271</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>220</line>
+          <line>222</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>243</line>
+          <line>245</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/posts.js</url>
-          <line>250</line>
+          <line>252</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
@@ -529,8 +544,32 @@
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/posts.js</url>
+          <line>121</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/posts.js</url>
+          <line>155</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/posts.js</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/posts.js</url>
+          <line>139</line>
+          <properties />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="24" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -669,8 +708,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/posts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="315" column="42" lean-forward="true" selection-start-line="315" selection-start-column="42" selection-end-line="315" selection-end-column="42" />
+        <state relative-caret-position="337">
+          <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding />
         </state>
       </provider>

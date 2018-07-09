@@ -128,7 +128,7 @@ router.get('/showReview', function(req,res){
     var limitSize = 10;
     var pageNum = 1;
 
-    BoardContents.count({deleted:false, category: category},
+    BoardContents.count({deleted:false, postid: postid},
         function(err, totalCount){
             // db에서 날짜 순으로 데이터들을 가져옴
             if(err)
@@ -157,7 +157,7 @@ router.post('/showReview', upload.array('UploadFile'),function(req, res){
     var addNewContent = req.body.addContents;
     var userToken = req.body.userToken;
     var addCategory = 9090;
-    var postId = req.body.postId;
+    var postid = req.body.postid;
     var upFile = req.files; // 업로드 된 파일을 받아옴
     var rating = req.body.rating;
     if(addNewContent == undefined || userToken == undefined)
@@ -171,7 +171,7 @@ router.post('/showReview', upload.array('UploadFile'),function(req, res){
         if(mode == 'add') {
             addNewWriter = data.user.display_name; // 유저 데이터를 신뢰하지 않는다.
             if (isSaved(upFile)) { // 파일이 제대로 업로드 되었는지 확인 후 디비에 저장시키게 됨
-                addReview(addNewWriter, addNewContent, addCategory, rating,postId, upFile);
+                addReview(addNewWriter, addNewContent, addCategory, rating, postid, upFile);
                 res.json({
                     status : 'success',
                     msg : 'success_write_post'
@@ -433,7 +433,7 @@ function addBoard(title, writer, content, category, upFile){
     });
 }
 
-function addReview(writer, content, category, rating, postId ,upFile){
+function addReview(writer, content, category, rating, postid ,upFile){
     var newContent = content.replace(/\r\n/gi, "\\r\\n");
     if(category == undefined || category == 0)
         category = 9090;
@@ -442,7 +442,7 @@ function addReview(writer, content, category, rating, postId ,upFile){
     newBoardContents.writer = writer;
     newBoardContents.contents = newContent;
     newBoardContents.category = category;
-    newBoardContents.postId = postId;
+    newBoardContents.postid = postid;
     newBoardContents.rating = rating;
 
     newBoardContents.save(function (err) {
