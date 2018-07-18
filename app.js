@@ -10,6 +10,8 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var postsRouter = require('./routes/posts');
 
+var schedule = require('./batch/wordpressBatch');
+
 var app = express();
 
 mongoose.connect('mongodb://localhost/boards');

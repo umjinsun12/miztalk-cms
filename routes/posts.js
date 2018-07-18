@@ -37,6 +37,19 @@ router.get('/', function(req,res){
     });
 });
 
+router.get('/post', function(req, res){
+    var postid = req.param('postid');
+    var category = req.param('category');
+    BoardContents.find({postid:postid}, function(err, rawContent) {
+        if(err) throw err;
+        console.log(rawContent);
+        res.json({
+            contents:rawContent,
+            status : 200
+        });
+    });
+});
+
 router.get('/search', function(req, res){
     // 글 검색하는 부분
     var search_word = req.param('searchWord');
@@ -257,6 +270,8 @@ router.post('/reply', function(req, res){
         throw new Error(err);
     });
 });
+
+
 
 router.post('/likes', function(req, res){
     // 좋아요 하는 부분
