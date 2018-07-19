@@ -20,7 +20,7 @@ var scheduler = schedule.scheduleJob("*/5 * * * * *", function() {
 function getPosts(){
 
     var options = {
-        url : 'http://miztalk.kr/wp-json/wp/v2/posts/?per_page=50',
+        url : 'http://miztalk.kr/wp-json/wp/v2/posts/?per_page=100',
         method : 'GET'
     };
     return new Promise(function(resolve, reject){
@@ -29,7 +29,6 @@ function getPosts(){
                 var resp = JSON.parse(body);
                 resolve(resp);
             }catch(err){
-                console.log("error id : " + categoryid);
                 reject(err);
             }
         });
