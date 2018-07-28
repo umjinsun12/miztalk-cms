@@ -37,6 +37,36 @@ router.get('/', function(req,res){
     });
 });
 
+
+router.get('/getCommunityPost', function(req,res){
+
+    var page = req.param('page');
+    if(page == null) {page = 1;}
+
+    var skipSize = (page-1)*10;
+    var limitSize = 10;
+    var pageNum = 1;
+
+    BoardContents.count({deleted:false, $or:[{category: 1}, {category: 2}, {category: 3}]},
+        function(err, totalCount){
+            // db에서 날짜 순으로 데이터들을 가져옴
+            if(err)
+                throw err;
+
+            pageNum = Math.ceil(totalCount/limitSize);
+            BoardContents.find({deleted:false,$or:[{category: 1}, {category: 2}, {category: 3}]}).sort({date:-1}).skip(skipSize).limit(limitSize).exec(function(err, pageContents) {
+                if(err) throw err;
+                res.json({
+                    title: "Board",
+                    contents: pageContents,
+                    pagination: pageNum,
+                    searchWord: ''
+                });
+            });
+        });
+});
+
+
 router.get('/post', function(req, res){
     var postid = req.param('postid');
     var category = req.param('category');
