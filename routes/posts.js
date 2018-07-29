@@ -385,7 +385,7 @@ router.get('/view', function(req, res){
 
 
 
-module.exports = router;
+
 
 
 function validateToken(userToken){
@@ -611,3 +611,5 @@ function isSaved(upFile) {
         return true;
     }
 }
+
+module.exports = router;
