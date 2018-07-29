@@ -11,7 +11,7 @@ router.get('/activateOtp', function(req, res){
         rawContent.activate = true;
         rawContent.save(function (err) {
             res.json({
-                msg : err.
+                msg : err,
                 status : 200
             });
         });
