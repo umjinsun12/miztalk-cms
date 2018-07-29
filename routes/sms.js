@@ -5,36 +5,21 @@ var SmsService = require('../service/smsService');
 var router = express.Router();
 
 
-router.get('/test', function(req, res){
-
-    SmsService.sendSms('21233','01055026392').then(function(result){
-        res.json({
-            msg:result,
-            status : 200
-        });
-    }).catch(function(reject){
-        res.json({
-            msg : reject,
-            status : 200
-        });
-    });
-});
-
 router.get('/verifyOtp', function(req, res){
     var phonenum = req.param('phonenum');
-    var code = req.param('code');
+    var usercode = req.param('code');
     SmsContents.findOne({phonenum: phonenum}, function (err, rawContent) {
        if(err) throw err;
        if(rawContent == null){
            res.json({
                msg : 'fail_notcreate',
-               status : 200
+               status : 201
            });
        }
        else if(rawContent.activate == true){
            res.json({
               msg : 'already_activate',
-               status : 200
+               status : 201
            });
        }
        else{
@@ -42,7 +27,28 @@ router.get('/verifyOtp', function(req, res){
            var nowDate = new Date();
            var elapsed  = (nowDate.getTime() - otpDate.getTime())/1000;
            console.log(elapsed);
-
+           if(elapsed >= 90){
+               res.json({
+                   msg : 'session_expired',
+                   status : 201
+               });
+           }else{
+               if(usercode == rawContent.otp){
+                   rawContent.activate = true;
+                   rawContent.save(function (err) {
+                       if(err) throw err;
+                       res.json({
+                           msg : 'success_activate',
+                           status : 200
+                       });
+                   });
+               }else{
+                   res.json({
+                      msg : 'wrong_code',
+                      status : 201
+                   });
+               }
+           }
        }
     });
 });
@@ -70,7 +76,7 @@ router.get('/sendOtp', function(req, res){
                         if(err){
                             res.json({
                                 msg : 'fail_create',
-                                status : 200
+                                status : 201
                             });
                             throw err;
                         }
@@ -83,7 +89,7 @@ router.get('/sendOtp', function(req, res){
         else if(rawContent.activate == true){
             res.json({
                msg : 'already_activate',
-               status : 200
+               status : 201
             });
         }
         else{
@@ -110,7 +116,7 @@ router.get('/sendOtp', function(req, res){
                                if(err){
                                    res.json({
                                        msg : 'fail_create',
-                                       status : 200
+                                       status : 201
                                    });
                                    throw err;
                                }
@@ -119,7 +125,7 @@ router.get('/sendOtp', function(req, res){
                     }else{
                         res.json({
                             msg : 'reject_fail',
-                            status : 200
+                            status : 201
                         });
                     }
                 }else{ //5회 가 안 지낫을때 다시 보냄
@@ -138,7 +144,7 @@ router.get('/sendOtp', function(req, res){
                             if(err){
                                 res.json({
                                     msg : 'fail_update',
-                                    status : 200
+                                    status : 201
                                 });
                                 throw err;
                             }
@@ -148,7 +154,7 @@ router.get('/sendOtp', function(req, res){
             }else{ // 120초 안됐을때 이미 발급
                 res.json({
                     msg : 'already_sendotp',
-                    status : 200
+                    status : 201
                 });   
             }
         }
