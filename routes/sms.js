@@ -5,6 +5,20 @@ var SmsService = require('../service/smsService');
 var router = express.Router();
 
 
+router.get('/activateOtp', function(req, res){
+    var phonenum = req.param('phonenum');
+    SmsContents.findOne({phonenum: phonenum}, function (err, rawContent) {
+        rawContent.activate = true;
+        rawContent.save(function (err) {
+            res.json({
+                msg : err.
+                status : 200
+            });
+        });
+    });
+});
+
+
 router.get('/verifyOtp', function(req, res){
     var phonenum = req.param('phonenum');
     var usercode = req.param('code');
@@ -34,7 +48,6 @@ router.get('/verifyOtp', function(req, res){
                });
            }else{
                if(usercode == rawContent.otp){
-                   rawContent.activate = true;
                    rawContent.save(function (err) {
                        if(err) throw err;
                        res.json({
