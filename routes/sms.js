@@ -18,6 +18,22 @@ router.get('/activateOtp', function(req, res){
     });
 });
 
+router.get('/sendAccount', function(req, res){
+   var phonenum = req.param('phonenum');
+   var price = req.param('price');
+   SmsService.sendAccount(phonenum, price).then(function(result){
+       res.json({
+           msg : 'success_create',
+           status : 200
+       });
+   }).then(function(err){
+       res.json({
+           msg : 'fail_create',
+           status : 200
+       });
+   });
+});
+
 
 router.get('/verifyOtp', function(req, res){
     var phonenum = req.param('phonenum');
