@@ -145,7 +145,7 @@ router.post('/', upload.array('UploadFile'),function(req, res){
                 });
             }
         } else {
-            modBoard(modId, modTitle, modContent);
+            modBoard(modId, addNewTitle, addNewContent, upFile);
             res.json({
                 status : 'success',
                 msg : 'success_modify_post'
@@ -518,7 +518,7 @@ function addReview(writer, content, category, rating, postid ,upFile){
 }
 
 
-function modBoard(id, title, content) {
+function modBoard(id, title, content, upFile) {
     var modContent = content.replace(/\r\n/gi, "\\r\\n");
 
     BoardContents.findOne({_id:id}, function(err, originContent){
@@ -529,7 +529,7 @@ function modBoard(id, title, content) {
         });
     });
 
-    BoardContents.update({_id:id}, {$set: {title: title, contents: modContent, date: Date.now()}}, function(err) {
+    BoardContents.update({_id:id}, {$set: {title: title, contents: modContent}}, function(err) {
         if(err) throw err;
     });
 }
