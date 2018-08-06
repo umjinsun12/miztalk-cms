@@ -67,6 +67,7 @@ router.get('/getCommunityPost', function(req,res){
 });
 
 
+
 router.get('/post', function(req, res){
     var postid = req.param('postid');
     var category = req.param('category');
