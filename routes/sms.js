@@ -8,12 +8,10 @@ var router = express.Router();
 router.get('/activateOtp', function(req, res){
     var phonenum = req.param('phonenum');
     var username = req.param('username');
-    var useremail = req.param('email');
 
     SmsContents.findOne({phonenum: phonenum}, function (err, rawContent) {
         rawContent.activate = true;
         rawContent.username = username;
-        rawContent.useremail = useremail;
 
         rawContent.save(function (err) {
             res.json({
