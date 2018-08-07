@@ -5,7 +5,9 @@ var smsSchema = mongoose.Schema({
     date: {type: Date, default: Date.now},
     otp : String,
     count : {type:Number, default:0},
-    activate : {type:Boolean, default: false}
+    activate : {type:Boolean, default: false},
+    username : String,
+    useremail : String
 });
 
 module.exports =  mongoose.model('smsContents', smsSchema);
