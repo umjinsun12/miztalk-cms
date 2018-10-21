@@ -37,7 +37,8 @@ router.get('/_updateProduct', function(req, res) {
                                     res.json(result);
                             });
                         }else{
-                            rawContent.update({_id:rawContent._id}, {$set: {data: elementData, name : elementData.name, updateTime : Date.now()}}, function(err) {
+                            console.log(rawContent);
+                            MemberContents.update({_id:rawContent._id}, {$set: {data: elementData, name : elementData.name, updateTime : Date.now()}}, function(err) {
                                 if(err) throw err;
                                 if(elementData.collections.length > 0){
                                     rawContent.category = [];
