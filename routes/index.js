@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 router.get('/version', function(req,res){
     res.json({
         status : 'success',
-        version : '1.0'
+        version : '1.2'
     });
 });
 

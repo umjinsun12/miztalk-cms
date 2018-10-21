@@ -10,8 +10,9 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var postsRouter = require('./routes/posts');
 var smsRouter = require('./routes/sms');
+var clayfulRouter = require('./routes/clayful');
 
-var schedule = require('./batch/wordpressBatch');
+//var schedule = require('./batch/wordpressBatch');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/posts', postsRouter);
 app.use('/sms', smsRouter);
+app.use('/clayful', clayfulRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
