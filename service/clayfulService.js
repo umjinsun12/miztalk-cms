@@ -6,6 +6,7 @@ Clayful.config({
 });
 var Product = Clayful.Product;
 var Customer = Clayful.Customer;
+var Cart = Clayful.Cart;
 
 var self = {
     productList : function(pages, limits){
@@ -48,6 +49,16 @@ var self = {
                     reject(err);
                 else
                     resolve(result.data);
+            });
+        });
+    },
+    addCart : function(customerId, payload){
+        return new Promise(function(resolve, reject){
+            Cart.addItem(customerId, payload, function(err, result){
+               if(err)
+                   reject(err);
+               else
+                   resolve(result.data);
             });
         });
     }
