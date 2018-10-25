@@ -311,5 +311,140 @@ router.post('/_memberReg', function(req, res){
 });
 
 
+router.post('/checkoutLogin', function(req, res){
+    var payload = JSON.parse(req.body.payload);
+    var productList = JSON.parse(req.body.productList);
+    var userid = req.body.id;
+    var userPoint = req.body.userPoint;
+    var userp = userPoint;
+    var discountProduct = [];
+
+    if(payload == null || productList == null || userid == null){
+        res.json({
+            status : "error",
+            msg : "null_param"
+        })
+    }
+
+    console.log(userid);
+
+    MemberContents.findOne({_id : userid}, function(err, memberContent){
+        if(err) throw err;
+        if(memberContent == null){
+            res.json({
+                status : "error",
+                msg : "none_user"
+            })
+        }else{
+            if(memberContent.point < userPoint){
+                res.json({
+                  status : "error",
+                  msg : "none_point"
+                })
+            }else{
+                for(var i=0 ;i < productList.length ; i++){
+                    if(userPoint < 100)
+                        break;
+                    if(productList[i].price >= userPoint){
+                        var discounts = [];
+                        var dis10000 = parseInt(userPoint/10000) * 10000;
+                        var dis1000 = parseInt((userPoint-dis10000)/1000) * 1000;
+                        var dis100 = parseInt((userPoint-dis10000-dis1000)/100) * 100;
+                        if(dis10000)
+                            discounts.push(String(dis10000));
+                        if(dis1000)
+                            discounts.push(String(dis1000));
+                        if(dis100)
+                            discounts.push(String(dis100));
+                        discountProduct.push({
+                            item : productList[i].id,
+                            discounts:discounts
+                        });
+                        userPoint = 0;
+                        break;
+                    }else{
+                        var discounts = [];
+                        var dis10000 = parseInt(productList[i].price/10000) * 10000;
+                        var dis1000 = parseInt((productList[i].price-dis10000)/1000) * 1000;
+                        var dis100 = parseInt((productList[i].price-dis10000-dis1000)/100) * 100;
+                        if(dis10000)
+                            discounts.push(String(dis10000));
+                        if(dis1000)
+                            discounts.push(String(dis1000));
+                        if(dis100)
+                            discounts.push(String(dis100));
+                        discountProduct.push({
+                            item : productList[i].id,
+                            discounts:discounts
+                        });
+                        discountProduct.push({
+                            item : productList[i].id,
+                            discounts:discounts
+                        });
+                        userPoint = userPoint - productList[i].price;
+                    }
+                }
+                payload.discount = {
+                    items : discountProduct
+                };
+                ClayfulService.checkoutLogin(userid, payload).then(function(result){
+                    memberContent.point = memberContent.point - userp;
+                    memberContent.point_history.push({orderid : result._id ,msg : userp, date : new Date()});
+                    memberContent.save(function (err) {
+                        if(err) throw err;
+                    });
+                    res.json(result);
+                }).catch(function(reject){
+                    console.log(reject);
+                });
+            }
+        }
+    });
+});
+
+
+router.get('/getPoint', function(req, res){
+    var userid = req.param('id');
+    MemberContents.findOne({_id : userid}, function(err, memberContent){
+        if(err) throw err;
+        console.log(memberContent);
+       if(memberContent == null){
+           res.json({
+               status : "error",
+               msg : "none_user"
+           });
+       }else{
+           res.json({
+               status : "success",
+               msg : memberContent.point
+           });
+       }
+    });
+});
+
+router.get('/setAdminUserPoint', function(req, res){
+    var userid = req.param('id');
+    var point = req.param('point');
+    MemberContents.findOne({_id : userid}, function(err, memberContent){
+       if(err) throw err;
+       console.log(memberContent);
+       if(memberContent == null){
+           res.json({
+               status : "error",
+               msg : "none_user"
+           });
+       }else{
+           MemberContents.point = parseInt(point);
+           MemberContents.save(function(err){
+              if(err) throw err;
+               res.json({
+                   status : "success"
+               });
+           });
+       }
+    });
+});
+
+
 
 module.exports = router;

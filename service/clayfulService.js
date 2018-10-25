@@ -61,6 +61,18 @@ var self = {
                    resolve(result.data);
             });
         });
+    },
+    checkoutLogin : function(token, payload){
+        return new Promise(function (resolve, reject) {
+            Cart.checkout(token,'order',payload, function(err, result){
+                if(err)
+                    reject(err);
+                else{
+                    console.log(result);
+                    resolve(result.data.order);
+                }
+            });
+        });
     }
 };
 

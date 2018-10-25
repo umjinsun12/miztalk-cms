@@ -8,6 +8,7 @@ var memberSchema = mongoose.Schema({
     tokenDate : {type: Date, default: Date.now},
     data : String,
     point : {type:Number, default:1000},
+    point_history : [{orderid : String,msg : String, date : Date}],
     marketing : {type:Boolean, default: false},
     count : {type:Number, default:0},
     activate : {type:Boolean, default: false}
