@@ -12,7 +12,7 @@ var postsRouter = require('./routes/posts');
 var smsRouter = require('./routes/sms');
 var clayfulRouter = require('./routes/clayful');
 
-//var schedule = require('./batch/wordpressBatch');
+var schedule = require('./batch/wordpressBatch');
 
 var app = express();
 
