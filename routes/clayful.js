@@ -14,7 +14,10 @@ router.get('/_updateProduct', function(req, res) {
         page = 1;
     if(limit == null)
         limit = 120;
-    ClayfulService.productList(page,limit).then(function(result){
+    ProductContents.remove({}, function(err){
+        if(err) throw err;
+
+        ClayfulService.productList(page,limit).then(function(result){
             var processCount = 0;
             var dataLength = result.data.length;
             if(dataLength != 0){
@@ -66,6 +69,8 @@ router.get('/_updateProduct', function(req, res) {
         }).catch(function(err){
             res.json(err);
         });
+
+    });
 });
 
 

@@ -60,30 +60,40 @@ var self={
     },
     sendKakao : function(orderData){
         var productName = orderData.items[0].product.name;
-        if(items.length > 1)
-            productName += "외 " + String(items.length-1) + "개";
-        var options = {
-            url : 'https://alimtalk-api.bizmsg.kr/v1/sender/send/',
+        if(orderData.items.length > 1)
+            productName += "외 " + String(orderData.items.length-1) + "개";
+        var options = [{
+            url : 'https://alimtalk-api.bizmsg.kr/v2/sender/send/',
             method : 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'userId' : 'miztalk'
+            },
             form : {
-                userId : 'miztalk',
-                phn : '82' + orderData.customer.mobile,
+                message_type : 'at',
+                phn : '82' + orderData.customer.mobile.slice(1),
                 profile : '2e1e7cc1a4b228206cd18625ed4caba567dc9464',
                 tmplId : 'messge01_buy',
-                msg : "미즈톡 " + orderData.cutomer.name.full + " 주문이 완료되었습니다. \n * 구매자 전화번호 : " +  orderData.customer.mobile + " \n * 주문일자 : " + orderData.customer.createdAt.formatted +
+                reserveDt : '00000000000000',
+                msg : "미즈톡 " + orderData.customer.name.full + " 주문이 완료되었습니다. \n * 구매자 전화번호 : " +  orderData.customer.mobile + " \n * 주문일자 : " + orderData.createdAt.formatted +
                     " \n * 상품명(수량) : " + productName + " (주문번호 : " + orderData._id + ") \n * 결제금액 : " + orderData.total.price.sale.formatted +" \n * 배송지 : "
                     + orderData.address.shipping.address1 + orderData.address.shipping.address2 + " \n * * 주문취소/배송조회 문의: 010-2380-2040"
             }
-        };
+        }];
+
+        console.log(options);
+
         return new Promise(function(resolve, reject){
             request(options, function(err, response, body){
                 try{
                     var resp = JSON.parse(body);
+                    console.log(resp);
                     if(resp.result_code != 1)
                         reject(resp);
                     else
                         resolve(resp);
                 }catch (e) {
+                    console.log(e);
                     reject(e);
                 }
             });
