@@ -446,5 +446,10 @@ router.get('/setAdminUserPoint', function(req, res){
 });
 
 
+router.post('/sendSms', function(req, res){
+    console.log(JSON.stringify(req));
+});
+
+
 
 module.exports = router;
