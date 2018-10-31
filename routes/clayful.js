@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ProductContents = require('../models/productSchema'); //db를 사용하기 위한 변수
 var ClayfulService = require('../service/clayfulService');
+var SmsService = require('../service/smsService');
 var MemberContents = require('../models/memberSchema');
 var SmsContents = require('../models/smsSchema'); //db를 사용하기 위한 변수
 
@@ -447,7 +448,21 @@ router.get('/setAdminUserPoint', function(req, res){
 
 
 router.post('/sendSms', function(req, res){
-    console.log(JSON.stringify(req));
+     var params = req.body.params;
+     if(params == null){
+         res.json({
+            status : "fail sendSms"
+         });
+     }
+
+     ClayfulService.getOrder(params.orderId).then(function (result) {
+         SmsService.sendKakao(result).then(function(result){
+             console.log(result);
+            res.json({
+                status : "success"
+            })
+         });
+     });
 });
 
 

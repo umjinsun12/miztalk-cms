@@ -7,6 +7,7 @@ Clayful.config({
 var Product = Clayful.Product;
 var Customer = Clayful.Customer;
 var Cart = Clayful.Cart;
+var Order = Clayful.Order;
 
 var self = {
     productList : function(pages, limits){
@@ -71,6 +72,17 @@ var self = {
                     console.log(result);
                     resolve(result.data.order);
                 }
+            });
+        });
+    },
+    getOrder : function(orderid){
+        return new Promise(function(resolve, reject){
+            Order.get(orderid, function(err, result){
+               if(err)
+                   reject(err);
+               else{
+                   resolve(result.data);
+               }
             });
         });
     }
