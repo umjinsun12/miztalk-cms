@@ -270,7 +270,10 @@ router.post('/_memberReg', function(req, res){
 
     var payload = {
         phone : phone,
-        alias : name
+        alias : name,
+        name : {
+            full : name
+        }
     };
     SmsContents.findOne({phonenum: phone}, function (err, rawContent) {
         if(err) throw err;
@@ -527,6 +530,70 @@ router.post('/checkoutAsNonRegisteredForMe',function(req, res){
     var payload = req.body.payload;
     ClayfulService.checkoutAsNonRegisteredForMe(payload).then(function(result){
        res.json(result);
+    });
+});
+
+
+router.post('/updateUser', function(req,res){
+    var username = req.body.name;
+    var userid = req.body.id;
+    ClayfulService.customerUpdate(userid, username);
+    res.json({
+        "status" : "success"
+    })
+});
+
+router.post('/orderList', function(req,res){
+    var options = req.body.options;
+    ClayfulService.orderListForMe(options).then(function(result){
+        res.json(result);
+    });
+});
+
+router.post('/addWishlist', function(req, res){
+   var userId = req.body.id;
+   var productId = req.body.productId;
+    MemberContents.findOne({_id: userId},function(err, memberContent){
+        memberContent.wishlist.push(productId);
+        memberContent.save(function(err){
+            if(err) throw err;
+            res.json({
+               status : "success",
+                data : memberContent.wishlist
+            });
+        });
+    });
+});
+
+router.post('/deleteWishlist', function(req, res){
+    var userId = req.body.id;
+    var productId = req.body.productId;
+    MemberContents.findOne({_id: userId},function(err, memberContent){
+        var flag = 0;
+        for(var i= 0 ; i < memberContent.wishlist.length ; i++){
+            if(memberContent.wishlist[i] == productId){
+                flag = 1;
+                memberContent.wishlist.splice(i, 1);
+                break;
+            }
+        }
+        memberContent.save(function(err){
+            if(err) throw err;
+            res.json({
+                status : "success",
+                data : memberContent.wishlist
+            });
+        });
+    });
+});
+
+router.get('/getWishlist', function(req, res){
+    var userId = req.param('id');
+    MemberContents.findOne({_id: userId},function(err, memberContent){
+        res.json({
+           status : "success",
+           data : memberContent.wishlist
+        });
     });
 });
 

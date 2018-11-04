@@ -11,7 +11,8 @@ var memberSchema = mongoose.Schema({
     point_history : [{orderid : String,msg : String, date : Date}],
     marketing : {type:Boolean, default: false},
     count : {type:Number, default:0},
-    activate : {type:Boolean, default: false}
+    activate : {type:Boolean, default: false},
+    wishlist : [String]
 });
 
 module.exports =  mongoose.model('memberContents', memberSchema);

@@ -157,6 +157,34 @@ var self = {
                     resolve(result);
             });
         });
+    },
+    customerUpdate : function(cutomerId,userName){
+        var payload = {
+          name : {
+              full : userName
+          }
+        };
+        var option = {
+        };
+        Customer.list(function(err, result){
+           console.log(err);
+           console.log(result);
+        });
+
+        Customer.update(cutomerId, payload, option, function(err, result){
+            console.log(err);
+            console.log(result);
+        });
+    },
+    orderListForMe : function(options){
+        return new Promise(function(resolve, reject){
+            Order.listForMe(options, function(err, result){
+                if (err) {
+                    reject(err);
+                }
+                resolve(result);
+            });
+        });
     }
 };
 
