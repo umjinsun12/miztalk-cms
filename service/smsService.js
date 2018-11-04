@@ -77,11 +77,11 @@ var self={
         var options = {
             url : 'https://alimtalk-api.bizmsg.kr/v2/sender/send/',
             method : 'POST',
+            body : JSON.stringify(formdata),
             headers: {
                 'content-type': 'application/json',
                 'userId' : 'miztalk'
-            },
-            body : JSON.stringify(formdata)
+            }
         };
 
         console.log(options);

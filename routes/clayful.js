@@ -93,7 +93,7 @@ router.get('/productList', function(req, res) {
             pageNum = Math.ceil(totalCount/limitSize);
 
             if(categoryType == null){
-                ProductContents.find().sort({createTime:-1}).skip(skipSize).limit(limitSize).exec(function(err, productContents) {
+                ProductContents.find().sort({createTime:1}).skip(skipSize).limit(limitSize).exec(function(err, productContents) {
                     if(err) throw err;
                     res.json({
                         title: "Product",
@@ -109,7 +109,7 @@ router.get('/productList', function(req, res) {
                         $in : [
                             categoryType
                         ]}
-                }).sort({createTime:-1}).skip(skipSize).limit(limitSize).exec(function(err, productContents) {
+                }).sort({createTime:1}).skip(skipSize).limit(limitSize).exec(function(err, productContents) {
                     if(err) throw err;
                     res.json({
                         title: "Product",
@@ -270,11 +270,7 @@ router.post('/_memberReg', function(req, res){
 
     var payload = {
         phone : phone,
-        alias : name,
-        meta : {
-            marketing : marketing,
-            user_point : 1000
-        }
+        alias : name
     };
     SmsContents.findOne({phonenum: phone}, function (err, rawContent) {
         if(err) throw err;
@@ -294,6 +290,7 @@ router.post('/_memberReg', function(req, res){
                            memberContent.name = name;
                            memberContent.phone = phone;
                            memberContent.marketing = marketing;
+                           memberContent.user_point = 1000;
                            memberContent.data = JSON.stringify(response);
                            memberContent.save(function(err){
                                res.json({
@@ -332,7 +329,10 @@ router.post('/checkoutLogin', function(req, res){
         })
     }
 
-    console.log(userid);
+    if(userPoint == undefined || userPoint == null){
+        userPoint = 0;
+        userp = 0;
+    }
 
     MemberContents.findOne({_id : userid}, function(err, memberContent){
         if(err) throw err;
@@ -349,7 +349,7 @@ router.post('/checkoutLogin', function(req, res){
                 })
             }else{
                 for(var i=0 ;i < productList.length ; i++){
-                    if(userPoint < 100)
+                    if(parseInt(userPoint) < 100)
                         break;
                     if(productList[i].price >= userPoint){
                         var discounts = [];
@@ -383,16 +383,14 @@ router.post('/checkoutLogin', function(req, res){
                             item : productList[i].id,
                             discounts:discounts
                         });
-                        discountProduct.push({
-                            item : productList[i].id,
-                            discounts:discounts
-                        });
                         userPoint = userPoint - productList[i].price;
                     }
                 }
-                payload.discount = {
-                    items : discountProduct
-                };
+                if(discountProduct.length != 0){
+                    payload.discount = {
+                        items : discountProduct
+                    };
+                }
                 ClayfulService.checkoutLogin(userid, payload).then(function(result){
                     memberContent.point = memberContent.point - userp;
                     memberContent.point_history.push({orderid : result._id ,msg : userp, date : new Date()});
@@ -471,5 +469,65 @@ router.post('/sendSms', function(req, res){
 });
 
 
+router.get('/loginSns', function(req, res){
+    var vendor = req.param('vendor');
+    ClayfulService.loginSns(vendor).then(function(result){
+        res.json({
+            status : "success",
+            redirect : result
+        });
+    });
+});
+
+router.post('/getCart', function(req, res){
+    var payload = req.body.payload;
+    var options = req.body.options;
+
+    ClayfulService.getCart(payload, options).then(function(result){
+        res.json({
+            status : "success",
+            cart : result
+        });
+    });
+});
+
+router.post('/addCartItem', function(req, res){
+    var payload = req.body.payload;
+    var options = req.body.options;
+    ClayfulService.addCartItem(payload, options).then(function(result){
+        res.json(result);
+    });
+});
+
+router.post('/deleteCartItem', function(req, res){
+    var itemId = req.body.itemId;
+    var options = req.body.options;
+    ClayfulService.deleteCartItem(itemId, options).then(function(result){
+        res.json(result);
+    });
+});
+
+router.post('/getOrder', function(req, res){
+    var id = req.body.id;
+    var options = req.body.options;
+    ClayfulService.getOrder(id, options).then(function(result){
+        res.json(result);
+    });
+});
+
+
+router.post('/getAsNonRegisteredForMe', function(req, res){
+   var payload = req.body.payload;
+   ClayfulService.getAsNonRegisteredForMe(payload).then(function(result){
+       res.json(result);
+   });
+});
+
+router.post('/checkoutAsNonRegisteredForMe',function(req, res){
+    var payload = req.body.payload;
+    ClayfulService.checkoutAsNonRegisteredForMe(payload).then(function(result){
+       res.json(result);
+    });
+});
 
 module.exports = router;

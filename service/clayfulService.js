@@ -65,6 +65,7 @@ var self = {
     },
     checkoutLogin : function(token, payload){
         return new Promise(function (resolve, reject) {
+            console.log(payload);
             Cart.checkout(token,'order',payload, function(err, result){
                 if(err)
                     reject(err);
@@ -83,6 +84,77 @@ var self = {
                else{
                    resolve(result.data);
                }
+            });
+        });
+    },
+    loginSns : function(vendor){
+        console.log(vendor);
+        return new Promise(function(resolve, reject){
+            Customer.authenticateBy3rdParty(vendor, function(err, result){
+                if(err)
+                    throw err;
+                else
+                    resolve(result.data.redirect);
+            });
+        });
+    },
+    getCart : function(payload, options){
+        return new Promise(function(resolve, reject){
+            Cart.getForMe(payload, options, function(err, result){
+                if(err)
+                    reject(err);
+                else
+                    resolve(result.data.cart);
+            });
+        });
+    },
+    deleteCartItem : function(itemId, options){
+        return new Promise(function(resolve, reject){
+            Cart.deleteItemForMe(itemId, options, function(err, result){
+                if(err)
+                    reject(err);
+                else
+                    resolve(result);
+            });
+        });
+    },
+    addCartItem : function(payload, options){
+        return new Promise(function(resolve, reject){
+           Cart.addItemForMe(payload, options, function(err, result){
+              if(err)
+                  reject(err);
+              else
+                  resolve(result);
+           });
+        });
+    },
+    getOrder : function(id, options){
+        return new Promise(function(resolve, reject){
+           Order.getForMe(id, options, function(err, result){
+               if(err)
+                   reject(err);
+               else
+                   resolve(result);
+           });
+        });
+    },
+    getAsNonRegisteredForMe : function(payload){
+        return new Promise(function(resolve, reject){
+            Cart.getAsNonRegisteredForMe(payload, function(err, result){
+                if(err)
+                    reject(err);
+                else
+                    resolve(result);
+            });
+        });
+    },
+    checkoutAsNonRegisteredForMe : function(payload){
+        return new Promise(function(resolve, reject){
+            Cart.checkoutAsNonRegisteredForMe('order', payload, function(err, result){
+                if(err)
+                    reject(err);
+                else
+                    resolve(result);
             });
         });
     }
