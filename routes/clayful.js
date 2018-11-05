@@ -298,7 +298,7 @@ router.post('/_memberReg', function(req, res){
                            memberContent.save(function(err){
                                res.json({
                                    status : "success",
-                                   msg : memberContent
+                                   msg : response
                                });
                            });
                        });
@@ -569,10 +569,8 @@ router.post('/deleteWishlist', function(req, res){
     var userId = req.body.id;
     var productId = req.body.productId;
     MemberContents.findOne({_id: userId},function(err, memberContent){
-        var flag = 0;
         for(var i= 0 ; i < memberContent.wishlist.length ; i++){
             if(memberContent.wishlist[i] == productId){
-                flag = 1;
                 memberContent.wishlist.splice(i, 1);
                 break;
             }
