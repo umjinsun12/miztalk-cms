@@ -83,7 +83,7 @@ router.get('/productList', function(req, res) {
     if(categoryType == null)
         categoryType = null;
 
-    var skipSize = (page-1)*10;
+    var skipSize = (page-1)*24;
     var limitSize = 24;
     var pageNum = 1;
 

@@ -10406,3 +10406,1522 @@ Sat, 21 Jul 2018 14:56:24 GMT express deprecated req.param(name): Use req.params
     __v: 0 } ]
 [0mGET /posts/post?postid=1775&category=9091 [32m200 [0m0.884 ms - 223[0m
 [0mGET /posts/?page=1&category=0 [36m304 [0m2.287 ms - -[0m
+(node:12858) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+events.js:165
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::3030
+    at Server.setupListenHandle [as _listen2] (net.js:1346:14)
+    at listenInCluster (net.js:1387:12)
+    at Server.listen (net.js:1475:7)
+    at Function.listen (/home/miztalk-cms/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/miztalk-cms/app.js:76:5)
+    at Module._compile (internal/modules/cjs/loader.js:654:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:665:10)
+    at Module.load (internal/modules/cjs/loader.js:566:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:506:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:498:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:695:10)
+    at startup (internal/bootstrap/node.js:201:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:516:3)
+Emitted 'error' event at:
+    at emitErrorNT (net.js:1366:8)
+    at process._tickCallback (internal/process/next_tick.js:178:19)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:697:11)
+    at startup (internal/bootstrap/node.js:201:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:516:3)
+(node:12876) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+miztalk server - localhost:3030
+connected
+Sun, 04 Nov 2018 09:48:47 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:11:20
+Sun, 04 Nov 2018 09:48:47 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:12:21
+[0mGET /clayful/_updateProduct [32m200 [0m407.601 ms - 91183[0m
+[0mGET /favicon.ico [33m404 [0m0.813 ms - 52[0m
+[0mPOST /clayful/memberCheck [32m200 [0m9.543 ms - 41[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.585 ms - 41[0m
+Sun, 04 Nov 2018 09:49:04 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:80:20
+Sun, 04 Nov 2018 09:49:04 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:81:28
+(node:12876) DeprecationWarning: collection.count is deprecated, and will be removed in a future version. Use collection.countDocuments or collection.estimatedDocumentCount instead
+[0mGET /clayful/productList?page=1 [32m200 [0m9.174 ms - 102835[0m
+Sun, 04 Nov 2018 09:49:09 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:473:22
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m41.994 ms - 97[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m360.447 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Ijk4ZmJiZGE5OGRkZjFkNjcxMzc3MDRjODNmMzBkNjRlNmI4OGQ0MzhlNmJiMTY0NTYxNzU2OTA1ZjFkOWU5NzkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjQ5NTEsImV4cCI6MTU0MTkyOTc1MSwic3ViIjoiNEU1QVNCQVpIREpRIn0.DMz_Z8Ia3JZCiV5EUt_DlSGx6irMKg2LJePugb6KKYo
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjFlZWU1MDAyMzg4MzFmMjk4OWVlNTExYWZmN2YyYTJlZjQxYTZmYWY0MDBjMzI4OGRmNGY4OTMwNjQ0ZTMyMmUiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEwOTI3NTQsImV4cCI6MTU0MTY5NzU1NCwic3ViIjoiNEU1QVNCQVpIREpRIn0.qXpXItwieNsB_SSEiyjk0ECQRtMEsa30UPNn01xA6L8
+[0mPOST /clayful/_memberLogin [32m200 [0m61.978 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.293 ms - 37[0m
+naver
+[0mGET /clayful/loginSns?vendor=naver [32m200 [0m333.234 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjgyM2FjNDVmOTE5NmZkOGU2ZDM2YzMxNzE0ZGM4NzFiZDMwNTgzZWUwN2U5NmQyYWUxODNmZTIyNjUzNWFiZDEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjQ5NzIsImV4cCI6MTU0MTkyOTc3Miwic3ViIjoiUEdVNVdGSzhGR0JFIn0.40aG72HZvN9dPHgpPhWRMQ6-FQxqBdgIYsc56r0H9ic
+{ _id: 'PGU5WFK8FGBE',
+  name: { first: null, last: null, full: '엄진섭' },
+  address: { primary: null, secondaries: [] },
+  connect: false,
+  verified: false,
+  groups: [],
+  userId: 'VETP4XUFAWDS',
+  alias: null,
+  email: 'ejsseop@naver.com',
+  avatar: null,
+  gender: 'male',
+  birthdate: null,
+  country: null,
+  mobile: null,
+  phone: null,
+  language: null,
+  currency: null,
+  timezone: null,
+  deactivatedAt: null,
+  lastLoggedInAt: 
+   { raw: '2018-11-04T09:49:32.578Z',
+     formatted: '2018년 11월 4일 일요일',
+     ago: '몇 초 전' },
+  social: [ { vendor: 'naver', id: '83069015' } ],
+  meta: {},
+  createdAt: 
+   { raw: '2018-11-04T09:49:32.579Z',
+     formatted: '2018년 11월 4일 일요일',
+     ago: '몇 초 전' },
+  updatedAt: 
+   { raw: '2018-11-04T09:49:32.579Z',
+     formatted: '2018년 11월 4일 일요일',
+     ago: '몇 초 전' } }
+[0mPOST /clayful/_memberLogin [32m200 [0m58.767 ms - 805[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.214 ms - 37[0m
+kakao
+[0mGET /clayful/loginSns?vendor=kakao [32m200 [0m49.510 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjA1NzBlNzhkN2I5YWNlZTc4N2JiMzMwNjRlNDIyNzI1ZmYwYWVmNzI3ZTBiMDkyNmRkNjQzMWQwZDU1NDBkYzUiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjQ5OTMsImV4cCI6MTU0MTkyOTc5Mywic3ViIjoiVllXU1pWNUZIUDJTIn0.n1bnsnrllBBp3Yi-02IfdaQl1u6WBmxVm81AEnT-B8M
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImFiODg0NDZmMmZjM2NlNzI0M2MzYjgwOGZlMzZlNDY2MzFkYmY0ODJhYzBjZTc4ODI0NWFiODc3ZDVmNjk5ZmUiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEwMTgzMzgsImV4cCI6MTU0MTYyMzEzOCwic3ViIjoiVllXU1pWNUZIUDJTIn0.RXjkoDjYviK-dbhobWRst8LG0LaZnTl_b60lj8iIsUY
+[0mPOST /clayful/_memberLogin [32m200 [0m56.826 ms - 784[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.208 ms - 37[0m
+Sun, 04 Nov 2018 09:52:54 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/posts.js:72:22
+Sun, 04 Nov 2018 09:52:54 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/posts.js:73:24
+[ { image: [],
+    category: 9091,
+    likelist: [],
+    rating: 5,
+    count: 0,
+    deleted: false,
+    _id: 5bdaafd39eaa776f34878651,
+    comments: [],
+    date: 2018-11-01T07:48:35.447Z,
+    updated: [],
+    postid: 6566,
+    __v: 0 } ]
+[0mGET /posts/post?postid=6566&category=9091 [32m200 [0m2.122 ms - 223[0m
+[ { image: [],
+    category: 9091,
+    likelist: [],
+    rating: 5,
+    count: 0,
+    deleted: false,
+    _id: 5bd903fa07d97650fa2c448a,
+    comments: [],
+    date: 2018-10-31T01:23:06.267Z,
+    updated: [],
+    postid: 6560,
+    __v: 0 } ]
+[0mGET /posts/post?postid=6560&category=9091 [32m200 [0m3.441 ms - 223[0m
+[ { image: [],
+    category: 9091,
+    likelist: [],
+    rating: 5,
+    count: 0,
+    deleted: false,
+    _id: 5bd903fa07d97650fa2c448a,
+    comments: [],
+    date: 2018-10-31T01:23:06.267Z,
+    updated: [],
+    postid: 6560,
+    __v: 0 } ]
+[0mGET /posts/post?postid=6560&category=9091 [36m304 [0m2.464 ms - -[0m
+[0mGET /clayful/productList?page=1 [32m200 [0m5.155 ms - 102835[0m
+kakao
+[0mGET /clayful/loginSns?vendor=kakao [32m200 [0m305.556 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjNiNWQwMzMxNDhlYTNhMzZmMmMxNTk3ZWNiODYzMGEyMGU2NGJlODcyMmM5NTBlM2RjNDVjODYyYTE3NjllMjkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjUzMzUsImV4cCI6MTU0MTkzMDEzNSwic3ViIjoiQ0I2UEQ2NlVaSlpKIn0.ptzT5WQQoE9zMCXbgQtv4SY0KftfM1Qk2fnUpVwdztQ
+{ _id: 'CB6PD66UZJZJ',
+  name: { first: null, last: null, full: '' },
+  address: { primary: null, secondaries: [] },
+  connect: false,
+  verified: false,
+  groups: [],
+  userId: 'RKJ8W77L5LPP',
+  alias: '이윤선',
+  email: null,
+  avatar: null,
+  gender: null,
+  birthdate: null,
+  country: null,
+  mobile: null,
+  phone: null,
+  language: null,
+  currency: null,
+  timezone: null,
+  deactivatedAt: null,
+  lastLoggedInAt: 
+   { raw: '2018-11-04T09:55:35.964Z',
+     formatted: '2018년 11월 4일 일요일',
+     ago: '몇 초 전' },
+  social: [ { vendor: 'kakao', id: '953392058' } ],
+  meta: {},
+  createdAt: 
+   { raw: '2018-11-04T09:55:35.966Z',
+     formatted: '2018년 11월 4일 일요일',
+     ago: '몇 초 전' },
+  updatedAt: 
+   { raw: '2018-11-04T09:55:35.966Z',
+     formatted: '2018년 11월 4일 일요일',
+     ago: '몇 초 전' } }
+[0mPOST /clayful/_memberLogin [32m200 [0m128.483 ms - 787[0m
+[0mPOST /clayful/nicknameCheck [32m200 [0m1.154 ms - 33[0m
+Sun, 04 Nov 2018 09:55:51 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/sms.js:91:24
+{ result_code: '1',
+  message: 'success',
+  msg_id: '24954853',
+  error_cnt: 0,
+  success_cnt: 1,
+  msg_type: 'SMS' }
+[0mGET /sms/sendOtp?phonenum=01090247107 [32m200 [0m430.046 ms - 37[0m
+Sun, 04 Nov 2018 09:56:00 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/sms.js:43:24
+Sun, 04 Nov 2018 09:56:00 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/sms.js:44:24
+9.057
+[0mGET /sms/verifyOtp?phonenum=01090247107&code=4567 [32m200 [0m2.952 ms - 39[0m
+{ name: { first: null, last: null, full: null },
+  address: { primary: null, secondaries: [] },
+  connect: false,
+  verified: false,
+  groups: [],
+  userId: 'RKJ8W77L5LPP',
+  alias: '동이콩이맘',
+  email: null,
+  avatar: null,
+  gender: null,
+  birthdate: null,
+  country: null,
+  mobile: null,
+  phone: '01090247107',
+  language: null,
+  currency: null,
+  timezone: null,
+  deactivatedAt: null,
+  lastLoggedInAt: '2018-11-04T09:55:35.964Z',
+  _id: 'CB6PD66UZJZJ',
+  social: [ { vendor: 'kakao', id: '953392058' } ],
+  meta: {},
+  createdAt: '2018-11-04T09:55:35.966Z',
+  updatedAt: '2018-11-04T09:56:03.799Z' }
+[0mPOST /clayful/_memberReg [32m200 [0m89.625 ms - 1143[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.364 ms - 1161[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.239 ms - 1161[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.595 ms - -[0m
+[0mGET /clayful/productList?page=2 [36m304 [0m1.364 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.904 ms - 41[0m
+Sun, 04 Nov 2018 09:57:35 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:126:26
+[0mGET /clayful/getProduct?id=RQMTD75HXN25 [32m200 [0m2.088 ms - 9575[0m
+[0mPOST /clayful/addCartItem [32m200 [0m266.135 ms - 598[0m
+[0mPOST /clayful/getCart [32m200 [0m296.112 ms - 8473[0m
+{ currency: 'KRW',
+  paymentMethod: 'clayful-iamport',
+  address: 
+   { shipping: 
+      { name: [Object],
+        country: 'KR',
+        city: '제주특별자치도 제주시 가령골길 1-1 (일도2동)',
+        state: '제주특별자치도 제주시 가령골길 1-1 (일도2동)',
+        postcode: '63275',
+        address1: '제주특별자치도 제주시 가령골길 1-1 (일도2동)',
+        address2: '101-101',
+        mobile: '01090247107' },
+     billing: 
+      { name: [Object],
+        country: 'KR',
+        city: '제주특별자치도 제주시 가령골길 1-1 (일도2동)',
+        state: '제주특별자치도 제주시 가령골길 1-1 (일도2동)',
+        postcode: '63275',
+        address1: '제주특별자치도 제주시 가령골길 1-1 (일도2동)',
+        address2: '101-101',
+        mobile: '01090247107' } },
+  discount: { items: [ [Object] ] } }
+{ Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+  stack: 'Error\n    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)\n    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:182:7)',
+  model: 'Cart',
+  method: 'checkout',
+  status: 400,
+  headers: 
+   { 'access-control-allow-credentials': 'true',
+     'access-control-expose-headers': 'WWW-Authenticate,Server-Authorization',
+     'cache-control': 'no-cache',
+     'content-type': 'application/json; charset=utf-8',
+     date: 'Sun, 04 Nov 2018 09:58:45 GMT',
+     server: 'nginx/1.12.1',
+     vary: 'origin,accept-encoding',
+     'transfer-encoding': 'chunked',
+     connection: 'Close' },
+  code: 'not-existing-discount-relation',
+  message: '하나 이상의 연관 \'Discount\' 모델이 존재하지 않습니다.',
+  validation: null }
+[0mPOST /clayful/checkoutLogin [0m- [0m- ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.056 ms - 1161[0m
+kakao
+[0mGET /clayful/loginSns?vendor=kakao [32m200 [0m293.537 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImE5YmFjMDJmMDJjNmMyMjk5ZGY3MGFkOTU3MTgyYjQyZDIwMTcyMTNkMzY3YWRiMTZiZjJlZTJkOGYwNjEzYWEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjU2MTQsImV4cCI6MTU0MTkzMDQxNCwic3ViIjoiQ0I2UEQ2NlVaSlpKIn0.dBSnB8co0R-snn9zpQx7QZ2nm-g0zB6eQDY8QVIGKP4
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjNiNWQwMzMxNDhlYTNhMzZmMmMxNTk3ZWNiODYzMGEyMGU2NGJlODcyMmM5NTBlM2RjNDVjODYyYTE3NjllMjkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjUzMzUsImV4cCI6MTU0MTkzMDEzNSwic3ViIjoiQ0I2UEQ2NlVaSlpKIn0.ptzT5WQQoE9zMCXbgQtv4SY0KftfM1Qk2fnUpVwdztQ
+[0mPOST /clayful/_memberLogin [32m200 [0m146.313 ms - 799[0m
+[0mPOST /clayful/memberCheck [32m200 [0m3.259 ms - 1401[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m5.779 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [32m200 [0m1.499 ms - 12179[0m
+[0mPOST /clayful/addCartItem [32m200 [0m177.996 ms - 591[0m
+[0mPOST /clayful/memberCheck [32m200 [0m9.569 ms - 1401[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.951 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.438 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.693 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.545 ms - -[0m
+[0mGET /clayful/productList?page=2 [36m304 [0m1.836 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.780 ms - -[0m
+[0mPOST /clayful/addCartItem [32m200 [0m223.557 ms - 598[0m
+[0mPOST /clayful/getCart [32m200 [0m376.308 ms - 19741[0m
+[0mPOST /clayful/deleteCartItem [32m200 [0m141.948 ms - 334[0m
+[0mPOST /clayful/getCart [32m200 [0m103.083 ms - 14781[0m
+[0mPOST /clayful/deleteCartItem [32m200 [0m37.311 ms - 334[0m
+[0mPOST /clayful/getCart [32m200 [0m92.505 ms - 8470[0m
+{ currency: 'KRW',
+  paymentMethod: 'clayful-iamport',
+  address: 
+   { shipping: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 노원구 공릉동 715',
+        state: '서울 노원구 공릉동 715',
+        postcode: '01854',
+        address1: '서울 노원구 공릉동 715',
+        address2: '103-101',
+        mobile: '01090247107' },
+     billing: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 노원구 공릉동 715',
+        state: '서울 노원구 공릉동 715',
+        postcode: '01854',
+        address1: '서울 노원구 공릉동 715',
+        address2: '103-101',
+        mobile: '01090247107' } } }
+{ Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+  stack: 'Error\n    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)\n    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:182:7)',
+  model: 'Cart',
+  method: 'checkout',
+  status: 400,
+  headers: 
+   { 'access-control-allow-credentials': 'true',
+     'access-control-expose-headers': 'WWW-Authenticate,Server-Authorization',
+     'cache-control': 'no-cache',
+     'content-type': 'application/json; charset=utf-8',
+     date: 'Sun, 04 Nov 2018 10:02:57 GMT',
+     server: 'nginx/1.12.1',
+     vary: 'origin,accept-encoding',
+     'content-length': '247',
+     connection: 'Close' },
+  code: 'validation',
+  message: '자식 필드 "customer": [자식 필드 "name": [자식 필드 "first": ["first" 필드는 문자열이어야합니다.], 자식 필드 "last": ["last" 필드는 문자열이어야합니다.], 자식 필드 "full": ["full" 필드는 문자열이어야합니다.]]]',
+  validation: { source: 'document.customer.name.first', type: 'string.base' } }
+[0mPOST /clayful/checkoutLogin [0m- [0m- ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.292 ms - 1401[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m6.490 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.999 ms - -[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m195.409 ms - 97[0m
+usertoken : 
+[0mPOST /clayful/_memberLogin [32m200 [0m95.220 ms - 36[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m48.228 ms - 97[0m
+usertoken : 
+[0mPOST /clayful/_memberLogin [32m200 [0m143.629 ms - 36[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m29.356 ms - 97[0m
+usertoken : 
+[0mPOST /clayful/_memberLogin [32m200 [0m35.869 ms - 36[0m
+[0mPOST /clayful/memberCheck [32m200 [0m0.826 ms - 38[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m48.947 ms - 97[0m
+usertoken : 
+[0mPOST /clayful/_memberLogin [32m200 [0m39.912 ms - 36[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m36.313 ms - 97[0m
+usertoken : 
+[0mPOST /clayful/_memberLogin [32m200 [0m23.573 ms - 36[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m31.817 ms - 97[0m
+usertoken : 
+[0mPOST /clayful/_memberLogin [32m200 [0m142.142 ms - 36[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m158.354 ms - 97[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.233 ms - 38[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRhMjBhOTU5NTk1MjczNGEzM2E4ZDIzMGExMWY4MDNkOTkyZDZhZDg3Y2JhM2NkZDQ4NDU5YWEyYTZlZDU1MTEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjYxODksImV4cCI6MTU0MTkzMDk4OSwic3ViIjoiNEU1QVNCQVpIREpRIn0.6-KG5S34de_Q30E92Ed7U864EVxYO2yVBajW1R8oSaQ
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Ijk4ZmJiZGE5OGRkZjFkNjcxMzc3MDRjODNmMzBkNjRlNmI4OGQ0MzhlNmJiMTY0NTYxNzU2OTA1ZjFkOWU5NzkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjQ5NTEsImV4cCI6MTU0MTkyOTc1MSwic3ViIjoiNEU1QVNCQVpIREpRIn0.DMz_Z8Ia3JZCiV5EUt_DlSGx6irMKg2LJePugb6KKYo
+[0mPOST /clayful/_memberLogin [32m200 [0m205.929 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.383 ms - 37[0m
+[0mGET /clayful/productList?page=1 [32m200 [0m5.612 ms - 102835[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [32m200 [0m1.968 ms - 12179[0m
+[0mPOST /clayful/addCartItem [32m200 [0m332.476 ms - 598[0m
+[0mPOST /clayful/getCart [32m200 [0m92.325 ms - 8757[0m
+{ currency: 'KRW',
+  paymentMethod: 'clayful-iamport',
+  address: 
+   { shipping: 
+      { name: [Object],
+        country: 'KR',
+        city: '부산 동구 고관로 5 (초량동)',
+        state: '부산 동구 고관로 5 (초량동)',
+        postcode: '48798',
+        address1: '부산 동구 고관로 5 (초량동)',
+        address2: '오오옹ㅇ',
+        mobile: '01055026392' },
+     billing: 
+      { name: [Object],
+        country: 'KR',
+        city: '부산 동구 고관로 5 (초량동)',
+        state: '부산 동구 고관로 5 (초량동)',
+        postcode: '48798',
+        address1: '부산 동구 고관로 5 (초량동)',
+        address2: '오오옹ㅇ',
+        mobile: '01055026392' } },
+  request: '잉이' }
+{ status: 201,
+  data: 
+   { order: 
+      { currency: [Object],
+        tax: [Object],
+        customer: [Object],
+        address: [Object],
+        total: [Object],
+        synced: true,
+        done: false,
+        tags: [],
+        cancellation: null,
+        request: '잉이',
+        receivedAt: null,
+        syncTriedAt: null,
+        items: [Array],
+        language: 'ko',
+        status: 'placed',
+        shipments: [Array],
+        _id: 'YQK3G5VQEJXQ',
+        fulfillments: [],
+        refunds: [],
+        transactions: [Array],
+        meta: {},
+        createdAt: '2018-11-04T10:11:05.383Z',
+        updatedAt: '2018-11-04T10:11:05.383Z' } },
+  headers: 
+   { 'access-control-allow-credentials': 'true',
+     'access-control-expose-headers': 'WWW-Authenticate,Server-Authorization',
+     'cache-control': 'no-cache',
+     'content-currency': 'KRW',
+     'content-language': 'ko',
+     'content-time-zone': 'Asia/Seoul',
+     'content-type': 'application/json; charset=utf-8',
+     date: 'Sun, 04 Nov 2018 10:11:05 GMT',
+     location: '',
+     server: 'nginx/1.12.1',
+     vary: 'origin,accept-encoding',
+     'transfer-encoding': 'chunked',
+     connection: 'Close' } }
+[0mPOST /clayful/checkoutLogin [32m200 [0m292.945 ms - 2957[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.449 ms - 37[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.580 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.354 ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m117.897 ms - 9184[0m
+(node:12876) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:12876) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 10)
+(node:12876) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[0mGET /clayful/productList?page=1 [36m304 [0m4.563 ms - -[0m
+(node:12876) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:12876) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 12)
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.422 ms - -[0m
+(node:12876) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:12876) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 14)
+(node:12876) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:12876) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 16)
+[0mPOST /clayful/getAsNonRegisteredForMe [0m- [0m- ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [0m- [0m- ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [0m- [0m- ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [0m- [0m- ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.042 ms - 38[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m5.626 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m3.075 ms - 37[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.646 ms - -[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m179.767 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjY3MmE1NDY0OGU4NDAxNDYwYTQyZjM3NjgyNGMwMTQ3MWY0MTY1YmUxMjZmNGJhMjUzMGU4MmMwZmVjMmJkZDAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjY0MTQsImV4cCI6MTU0MTkzMTIxNCwic3ViIjoiNEU1QVNCQVpIREpRIn0.Msmw0gusze0vXc-nMtqiSPHsvB8OhyOvQpZwj60eYIA
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRhMjBhOTU5NTk1MjczNGEzM2E4ZDIzMGExMWY4MDNkOTkyZDZhZDg3Y2JhM2NkZDQ4NDU5YWEyYTZlZDU1MTEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjYxODksImV4cCI6MTU0MTkzMDk4OSwic3ViIjoiNEU1QVNCQVpIREpRIn0.6-KG5S34de_Q30E92Ed7U864EVxYO2yVBajW1R8oSaQ
+[0mPOST /clayful/_memberLogin [32m200 [0m66.467 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.317 ms - 37[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m80.914 ms - 9196[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.775 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.290 ms - -[0m
+[0mPOST /clayful/addCartItem [32m200 [0m332.540 ms - 591[0m
+[0mPOST /clayful/getCart [32m200 [0m88.047 ms - 8757[0m
+{ currency: 'KRW',
+  paymentMethod: 'clayful-iamport',
+  address: 
+   { shipping: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 강남구 강남대로 708 (압구정동)',
+        state: '서울 강남구 강남대로 708 (압구정동)',
+        postcode: '06000',
+        address1: '서울 강남구 강남대로 708 (압구정동)',
+        address2: '아아',
+        mobile: '01055026392' },
+     billing: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 강남구 강남대로 708 (압구정동)',
+        state: '서울 강남구 강남대로 708 (압구정동)',
+        postcode: '06000',
+        address1: '서울 강남구 강남대로 708 (압구정동)',
+        address2: '아아',
+        mobile: '01055026392' } },
+  request: 'ㅇ아' }
+{ status: 201,
+  data: 
+   { order: 
+      { currency: [Object],
+        tax: [Object],
+        customer: [Object],
+        address: [Object],
+        total: [Object],
+        synced: true,
+        done: false,
+        tags: [],
+        cancellation: null,
+        request: 'ㅇ아',
+        receivedAt: null,
+        syncTriedAt: null,
+        items: [Array],
+        language: 'ko',
+        status: 'placed',
+        shipments: [Array],
+        _id: 'TEWP6BQ7FCFR',
+        fulfillments: [],
+        refunds: [],
+        transactions: [Array],
+        meta: {},
+        createdAt: '2018-11-04T10:14:35.647Z',
+        updatedAt: '2018-11-04T10:14:35.647Z' } },
+  headers: 
+   { 'access-control-allow-credentials': 'true',
+     'access-control-expose-headers': 'WWW-Authenticate,Server-Authorization',
+     'cache-control': 'no-cache',
+     'content-currency': 'KRW',
+     'content-language': 'ko',
+     'content-time-zone': 'Asia/Seoul',
+     'content-type': 'application/json; charset=utf-8',
+     date: 'Sun, 04 Nov 2018 10:14:35 GMT',
+     location: '',
+     server: 'nginx/1.12.1',
+     vary: 'origin,accept-encoding',
+     'transfer-encoding': 'chunked',
+     connection: 'Close' } }
+[0mPOST /clayful/checkoutLogin [32m200 [0m346.702 ms - 3001[0m
+[0mPOST /clayful/memberCheck [32m200 [0m0.947 ms - 38[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m7.387 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.570 ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m150.079 ms - 9204[0m
+[0mPOST /clayful/memberCheck [32m200 [0m0.889 ms - 38[0m
+kakao
+[0mGET /clayful/loginSns?vendor=kakao [32m200 [0m298.434 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjA0YzU0NjVlODVlYmFkMmY4NmE2NzYzMzMxMzgyMjY0YzUzOGRhYWMyZGIwZTI0MGQ3YTFhYzljOWJiYTJlNDEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjY2NTUsImV4cCI6MTU0MTkzMTQ1NSwic3ViIjoiQ0I2UEQ2NlVaSlpKIn0.GUVd7MbbZwsZpw8IOr3oNkUIiz8Ik_uAbhmqEyM4SU0
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImE5YmFjMDJmMDJjNmMyMjk5ZGY3MGFkOTU3MTgyYjQyZDIwMTcyMTNkMzY3YWRiMTZiZjJlZTJkOGYwNjEzYWEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjU2MTQsImV4cCI6MTU0MTkzMDQxNCwic3ViIjoiQ0I2UEQ2NlVaSlpKIn0.dBSnB8co0R-snn9zpQx7QZ2nm-g0zB6eQDY8QVIGKP4
+[0mPOST /clayful/_memberLogin [32m200 [0m285.528 ms - 800[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.128 ms - 1402[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m5.216 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.487 ms - -[0m
+[0mPOST /clayful/addCartItem [32m200 [0m72.837 ms - 598[0m
+[0mPOST /clayful/getCart [32m200 [0m99.678 ms - 14774[0m
+[0mPOST /clayful/deleteCartItem [32m200 [0m52.969 ms - 334[0m
+[0mPOST /clayful/getCart [32m200 [0m238.944 ms - 8763[0m
+[0mPOST /clayful/deleteCartItem [32m200 [0m52.285 ms - 334[0m
+[0mPOST /clayful/getCart [32m200 [0m80.696 ms - 2208[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m7.213 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.236 ms - -[0m
+[0mPOST /clayful/addCartItem [32m200 [0m468.621 ms - 598[0m
+[0mPOST /clayful/getCart [32m200 [0m89.759 ms - 8771[0m
+{ currency: 'KRW',
+  paymentMethod: 'clayful-iamport',
+  address: 
+   { shipping: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 노원구 공릉동 748',
+        state: '서울 노원구 공릉동 748',
+        postcode: '01853',
+        address1: '서울 노원구 공릉동 748',
+        mobile: '02090247107' },
+     billing: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 노원구 공릉동 748',
+        state: '서울 노원구 공릉동 748',
+        postcode: '01853',
+        address1: '서울 노원구 공릉동 748',
+        mobile: '02090247107' } },
+  discount: { items: [ [Object] ] } }
+{ Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+  stack: 'Error\n    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)\n    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:182:7)',
+  model: 'Cart',
+  method: 'checkout',
+  status: 400,
+  headers: 
+   { 'access-control-allow-credentials': 'true',
+     'access-control-expose-headers': 'WWW-Authenticate,Server-Authorization',
+     'cache-control': 'no-cache',
+     'content-type': 'application/json; charset=utf-8',
+     date: 'Sun, 04 Nov 2018 10:18:33 GMT',
+     server: 'nginx/1.12.1',
+     vary: 'origin,accept-encoding',
+     'transfer-encoding': 'chunked',
+     connection: 'Close' },
+  code: 'validation',
+  message: '자식 필드 "customer": [자식 필드 "name": [자식 필드 "first": ["first" 필드는 문자열이어야합니다.], 자식 필드 "last": ["last" 필드는 문자열이어야합니다.], 자식 필드 "full": ["full" 필드는 문자열이어야합니다.]]]',
+  validation: { source: 'document.customer.name.first', type: 'string.base' } }
+[0mPOST /clayful/checkoutLogin [0m- [0m- ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.623 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.076 ms - 37[0m
+kakao
+[0mGET /clayful/loginSns?vendor=kakao [32m200 [0m54.624 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImVhNTY3N2JiNDllNDQ5N2E0OGYzMjFiZGEyNzFmNDNhMzIzNmI0MDkzYWJhN2M0Zjg2MzI1MDUzZjI1Mzc4M2YiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjcyNzMsImV4cCI6MTU0MTkzMjA3Mywic3ViIjoiRkZFWFhDV1NMOEI4In0.DQSd7n7UCZgtwJp0SncNa5YtdWMHCGCAE6SosVoL_z4
+{ _id: 'FFEXXCWSL8B8',
+  name: { first: null, last: null, full: '' },
+  address: { primary: null, secondaries: [] },
+  connect: false,
+  verified: false,
+  groups: [],
+  userId: '6CGTVTQT58BH',
+  alias: '미즈톡',
+  email: null,
+  avatar: null,
+  gender: null,
+  birthdate: null,
+  country: null,
+  mobile: null,
+  phone: null,
+  language: null,
+  currency: null,
+  timezone: null,
+  deactivatedAt: null,
+  lastLoggedInAt: 
+   { raw: '2018-11-04T10:27:53.784Z',
+     formatted: '2018년 11월 4일 일요일',
+     ago: '몇 초 전' },
+  social: [ { vendor: 'kakao', id: '841413646' } ],
+  meta: {},
+  createdAt: 
+   { raw: '2018-11-04T10:27:53.785Z',
+     formatted: '2018년 11월 4일 일요일',
+     ago: '몇 초 전' },
+  updatedAt: 
+   { raw: '2018-11-04T10:27:53.785Z',
+     formatted: '2018년 11월 4일 일요일',
+     ago: '몇 초 전' } }
+[0mPOST /clayful/_memberLogin [32m200 [0m311.728 ms - 787[0m
+[0mPOST /clayful/nicknameCheck [32m200 [0m1.226 ms - 33[0m
+{ count: 0,
+  activate: false,
+  _id: 5bda704d9eaa776f3487604f,
+  date: 2018-11-01T03:17:33.704Z,
+  phonenum: '01023802040',
+  otp: '3292',
+  __v: 0 }
+285575.496
+{ result_code: '1',
+  message: 'success',
+  msg_id: '24956791',
+  error_cnt: 0,
+  success_cnt: 1,
+  msg_type: 'SMS' }
+[0mGET /sms/sendOtp?phonenum=01023802040 [32m200 [0m511.346 ms - 37[0m
+13.227
+[0mGET /sms/verifyOtp?phonenum=01023802040&code=1372 [32m200 [0m1.680 ms - 39[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.606 ms - 37[0m
+kakao
+[0mGET /clayful/loginSns?vendor=kakao [32m200 [0m378.660 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjJhMTA0ZWZmM2YwY2UwMGUyNGZlZjJhYmJmNDJlZTk2NGM3OWQyNTJlOGJlMTk4MTkwOTEwOGJkOTJhYjJhMGIiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjc4ODEsImV4cCI6MTU0MTkzMjY4MSwic3ViIjoiRkZFWFhDV1NMOEI4In0.3UIzKhER_hb_HzqknC04p4CkWMPn2_hatPF19d3PnvQ
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImVhNTY3N2JiNDllNDQ5N2E0OGYzMjFiZGEyNzFmNDNhMzIzNmI0MDkzYWJhN2M0Zjg2MzI1MDUzZjI1Mzc4M2YiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjcyNzMsImV4cCI6MTU0MTkzMjA3Mywic3ViIjoiRkZFWFhDV1NMOEI4In0.DQSd7n7UCZgtwJp0SncNa5YtdWMHCGCAE6SosVoL_z4
+[0mPOST /clayful/_memberLogin [32m200 [0m50.826 ms - 785[0m
+[0mPOST /clayful/nicknameCheck [32m200 [0m0.909 ms - 33[0m
+{ count: 1,
+  activate: false,
+  _id: 5bda704d9eaa776f3487604f,
+  date: 2018-11-04T10:37:09.201Z,
+  phonenum: '01023802040',
+  otp: '1372',
+  __v: 0 }
+144.466
+{ result_code: '1',
+  message: 'success',
+  msg_id: '24956850',
+  error_cnt: 0,
+  success_cnt: 1,
+  msg_type: 'SMS' }
+[0mGET /sms/sendOtp?phonenum=01023802040 [32m200 [0m263.014 ms - 37[0m
+12.738
+[0mGET /sms/verifyOtp?phonenum=01023802040&code=5776 [32m200 [0m1.734 ms - 39[0m
+{ name: { first: null, last: null, full: null },
+  address: { primary: null, secondaries: [] },
+  connect: false,
+  verified: false,
+  groups: [],
+  userId: '6CGTVTQT58BH',
+  alias: '코코몽',
+  email: null,
+  avatar: null,
+  gender: null,
+  birthdate: null,
+  country: null,
+  mobile: null,
+  phone: '01023802040',
+  language: null,
+  currency: null,
+  timezone: null,
+  deactivatedAt: null,
+  lastLoggedInAt: '2018-11-04T10:38:01.055Z',
+  _id: 'FFEXXCWSL8B8',
+  social: [ { vendor: 'kakao', id: '841413646' } ],
+  meta: {},
+  createdAt: '2018-11-04T10:27:53.785Z',
+  updatedAt: '2018-11-04T10:40:10.595Z' }
+[0mPOST /clayful/_memberReg [32m200 [0m350.600 ms - 1131[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.183 ms - 1149[0m
+[0mGET /clayful/productList?page=1 [32m200 [0m5.117 ms - 102835[0m
+[0mGET /clayful/getProduct?id=D65MVQKGEPZ8 [32m200 [0m1.839 ms - 10382[0m
+[0mPOST /clayful/addCartItem [32m200 [0m447.323 ms - 598[0m
+[0mPOST /clayful/getCart [32m200 [0m85.910 ms - 8431[0m
+{ currency: 'KRW',
+  paymentMethod: 'clayful-iamport',
+  address: 
+   { shipping: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 노원구 공릉동 748',
+        state: '서울 노원구 공릉동 748',
+        postcode: '01853',
+        address1: '서울 노원구 공릉동 748',
+        mobile: '01023802040' },
+     billing: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 노원구 공릉동 748',
+        state: '서울 노원구 공릉동 748',
+        postcode: '01853',
+        address1: '서울 노원구 공릉동 748',
+        mobile: '01023802040' } },
+  discount: { items: [ [Object] ] } }
+{ Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+  stack: 'Error\n    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)\n    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:182:7)',
+  model: 'Cart',
+  method: 'checkout',
+  status: 400,
+  headers: 
+   { 'access-control-allow-credentials': 'true',
+     'access-control-expose-headers': 'WWW-Authenticate,Server-Authorization',
+     'cache-control': 'no-cache',
+     'content-type': 'application/json; charset=utf-8',
+     date: 'Sun, 04 Nov 2018 10:41:51 GMT',
+     server: 'nginx/1.12.1',
+     vary: 'origin,accept-encoding',
+     'transfer-encoding': 'chunked',
+     connection: 'Close' },
+  code: 'validation',
+  message: '자식 필드 "customer": [자식 필드 "name": [자식 필드 "first": ["first" 필드는 문자열이어야합니다.], 자식 필드 "last": ["last" 필드는 문자열이어야합니다.], 자식 필드 "full": ["full" 필드는 문자열이어야합니다.]]]',
+  validation: { source: 'document.customer.name.first', type: 'string.base' } }
+[0mPOST /clayful/checkoutLogin [0m- [0m- ms - -[0m
+{ currency: 'KRW',
+  paymentMethod: 'clayful-iamport',
+  address: 
+   { shipping: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 노원구 공릉동 748',
+        state: '서울 노원구 공릉동 748',
+        postcode: '01853',
+        address1: '서울 노원구 공릉동 748',
+        mobile: '01023802040' },
+     billing: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 노원구 공릉동 748',
+        state: '서울 노원구 공릉동 748',
+        postcode: '01853',
+        address1: '서울 노원구 공릉동 748',
+        mobile: '01023802040' } },
+  discount: { items: [ [Object] ] } }
+{ Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+  stack: 'Error\n    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)\n    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:182:7)',
+  model: 'Cart',
+  method: 'checkout',
+  status: 400,
+  headers: 
+   { 'access-control-allow-credentials': 'true',
+     'access-control-expose-headers': 'WWW-Authenticate,Server-Authorization',
+     'cache-control': 'no-cache',
+     'content-type': 'application/json; charset=utf-8',
+     date: 'Sun, 04 Nov 2018 10:43:51 GMT',
+     server: 'nginx/1.12.1',
+     vary: 'origin,accept-encoding',
+     'content-length': '247',
+     connection: 'Close' },
+  code: 'validation',
+  message: '자식 필드 "customer": [자식 필드 "name": [자식 필드 "first": ["first" 필드는 문자열이어야합니다.], 자식 필드 "last": ["last" 필드는 문자열이어야합니다.], 자식 필드 "full": ["full" 필드는 문자열이어야합니다.]]]',
+  validation: { source: 'document.customer.name.first', type: 'string.base' } }
+[0mPOST /clayful/checkoutLogin [0m- [0m- ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.588 ms - 1149[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.234 ms - 1149[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m293.431 ms - 97[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m33.885 ms - 97[0m
+usertoken : 
+[0mPOST /clayful/_memberLogin [32m200 [0m75.580 ms - 36[0m
+[0mPOST /clayful/memberCheck [32m200 [0m0.807 ms - 38[0m
+[0mPOST /clayful/memberCheck [32m200 [0m3.594 ms - 1402[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m273.955 ms - 97[0m
+usertoken : 
+[0mPOST /clayful/_memberLogin [32m200 [0m399.372 ms - 36[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m185.858 ms - 97[0m
+usertoken : 
+[0mPOST /clayful/_memberLogin [32m200 [0m145.591 ms - 36[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m86.849 ms - 97[0m
+usertoken : 
+[0mPOST /clayful/_memberLogin [32m200 [0m31.882 ms - 36[0m
+[0mPOST /clayful/memberCheck [32m200 [0m0.901 ms - 38[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.334 ms - 38[0m
+kakao
+[0mGET /clayful/loginSns?vendor=kakao [32m200 [0m299.426 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVkOWI3ODQyYWM1MzM5NDdhZmUwZThmYTM4YzgwZWFiNTcyYmZjYmY0OTJmZTdjZjIyZmJhNjY3NDYwMzllZWUiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjk3NzEsImV4cCI6MTU0MTkzNDU3MSwic3ViIjoiQ0I2UEQ2NlVaSlpKIn0.BdBfjSue9csMYMoS9huJbjUeUyTY4KQvpqXLF1SzSqI
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjA0YzU0NjVlODVlYmFkMmY4NmE2NzYzMzMxMzgyMjY0YzUzOGRhYWMyZGIwZTI0MGQ3YTFhYzljOWJiYTJlNDEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjY2NTUsImV4cCI6MTU0MTkzMTQ1NSwic3ViIjoiQ0I2UEQ2NlVaSlpKIn0.GUVd7MbbZwsZpw8IOr3oNkUIiz8Ik_uAbhmqEyM4SU0
+[0mPOST /clayful/_memberLogin [32m200 [0m52.976 ms - 814[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.710 ms - 1416[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m5.203 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.754 ms - -[0m
+[0mPOST /clayful/addCartItem [32m200 [0m142.877 ms - 591[0m
+[0mPOST /clayful/getCart [32m200 [0m363.545 ms - 13763[0m
+[0mPOST /clayful/deleteCartItem [32m200 [0m185.503 ms - 334[0m
+[0mPOST /clayful/getCart [32m200 [0m86.089 ms - 8757[0m
+{ currency: 'KRW',
+  paymentMethod: 'clayful-iamport',
+  address: 
+   { shipping: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 노원구 공릉동 748',
+        state: '서울 노원구 공릉동 748',
+        postcode: '01853',
+        address1: '서울 노원구 공릉동 748',
+        mobile: '01090247107' },
+     billing: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 노원구 공릉동 748',
+        state: '서울 노원구 공릉동 748',
+        postcode: '01853',
+        address1: '서울 노원구 공릉동 748',
+        mobile: '01090247107' } },
+  discount: { items: [ [Object] ] } }
+{ status: 201,
+  data: 
+   { order: 
+      { currency: [Object],
+        tax: [Object],
+        customer: [Object],
+        address: [Object],
+        total: [Object],
+        synced: true,
+        done: false,
+        tags: [],
+        cancellation: null,
+        request: null,
+        receivedAt: null,
+        syncTriedAt: null,
+        items: [Array],
+        language: 'ko',
+        status: 'placed',
+        shipments: [Array],
+        _id: 'G7MWPJ5YBHP3',
+        fulfillments: [],
+        refunds: [],
+        transactions: [Array],
+        meta: {},
+        createdAt: '2018-11-04T11:10:42.114Z',
+        updatedAt: '2018-11-04T11:10:42.114Z' } },
+  headers: 
+   { 'access-control-allow-credentials': 'true',
+     'access-control-expose-headers': 'WWW-Authenticate,Server-Authorization',
+     'cache-control': 'no-cache',
+     'content-currency': 'KRW',
+     'content-language': 'ko',
+     'content-time-zone': 'Asia/Seoul',
+     'content-type': 'application/json; charset=utf-8',
+     date: 'Sun, 04 Nov 2018 11:10:42 GMT',
+     location: '',
+     server: 'nginx/1.12.1',
+     vary: 'origin,accept-encoding',
+     'transfer-encoding': 'chunked',
+     connection: 'Close' } }
+[0mPOST /clayful/checkoutLogin [32m200 [0m269.289 ms - 3002[0m
+(node:12876) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:12876) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 25)
+[0mGET /clayful/productList?page=1 [32m200 [0m4.598 ms - 102835[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [32m200 [0m1.845 ms - 12179[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m70.275 ms - 9190[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.535 ms - 1519[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.348 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.189 ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m162.946 ms - 9190[0m
+[0mPOST /clayful/sendSms [0m- [0m- ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m3.775 ms - 37[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.753 ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m74.969 ms - 2641[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.964 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m2.724 ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m77.604 ms - 9184[0m
+[0mGET /clayful/productList?page=1 [32m200 [0m5.161 ms - 102835[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [32m200 [0m1.561 ms - 12179[0m
+(node:12876) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:12876) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 27)
+[0mGET /clayful/productList?page=1 [36m304 [0m4.971 ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m206.416 ms - 2634[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.387 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [32m200 [0m1.279 ms - 12179[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m63.708 ms - 9190[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m260.903 ms - 9190[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.893 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.095 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m0.900 ms - 37[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.262 ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m213.898 ms - 2641[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.556 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.114 ms - -[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m412.576 ms - 9196[0m
+[0mPOST /clayful/sendSms [0m- [0m- ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m0.778 ms - 38[0m
+[0mPOST /clayful/memberCheck [32m200 [0m0.843 ms - 38[0m
+[0mGET /clayful/productList?page=1 [32m200 [0m4.667 ms - 102835[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.438 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.734 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.206 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.087 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.278 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m3.776 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m8.216 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m3.898 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.199 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m3.853 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m3.849 ms - -[0m
+[0mGET /clayful/getProduct?id=D65MVQKGEPZ8 [32m200 [0m1.452 ms - 10382[0m
+[0mGET /clayful/productList?page=1 [32m200 [0m3.914 ms - 102835[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [32m200 [0m2.232 ms - 12179[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m80.112 ms - 8846[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m66.076 ms - 9184[0m
+(node:12876) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:12876) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 29)
+[0mPOST /clayful/sendSms [0m- [0m- ms - -[0m
+(node:14740) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+miztalk server - localhost:3030
+connected
+add post id : 6587
+[0mPOST /clayful/memberCheck [32m200 [0m14.923 ms - 37[0m
+Sun, 04 Nov 2018 16:51:05 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:80:20
+Sun, 04 Nov 2018 16:51:05 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:81:28
+(node:14740) DeprecationWarning: collection.count is deprecated, and will be removed in a future version. Use collection.countDocuments or collection.estimatedDocumentCount instead
+[0mGET /clayful/productList?page=1 [36m304 [0m10.998 ms - -[0m
+[0mGET /clayful/productList?page=2 [36m304 [0m1.738 ms - -[0m
+Sun, 04 Nov 2018 16:51:10 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:126:26
+[0mGET /clayful/getProduct?id=6UP5BHA2RE5C [32m200 [0m1.667 ms - 4089[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m149.990 ms - 8529[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m258.653 ms - 8529[0m
+[0mPOST /clayful/getAsNonRegisteredForMe [32m200 [0m248.330 ms - 8523[0m
+Sun, 04 Nov 2018 16:51:30 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:473:22
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m34.120 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImM1MjhkZDAzNjc4MTYyYzUzNGVhNjBmNTM0OWQ2OGU1NWI4ZDZhOTk1NTdiZWZlOTc1NjA3ZmZmZTQ2MDA4NTEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzNTAyOTIsImV4cCI6MTU0MTk1NTA5Miwic3ViIjoiNEU1QVNCQVpIREpRIn0.-hILfMu-B2NnPwmr9wsnPLNJS8Af-Xncu7PtYy-Q-F0
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjY3MmE1NDY0OGU4NDAxNDYwYTQyZjM3NjgyNGMwMTQ3MWY0MTY1YmUxMjZmNGJhMjUzMGU4MmMwZmVjMmJkZDAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjY0MTQsImV4cCI6MTU0MTkzMTIxNCwic3ViIjoiNEU1QVNCQVpIREpRIn0.Msmw0gusze0vXc-nMtqiSPHsvB8OhyOvQpZwj60eYIA
+[0mPOST /clayful/_memberLogin [32m200 [0m302.895 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.530 ms - 37[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m8.245 ms - -[0m
+[0mPOST /clayful/getCart [32m200 [0m54.825 ms - 2208[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m5.028 ms - -[0m
+[0mGET /clayful/productList?page=2 [36m304 [0m1.830 ms - -[0m
+[0mGET /clayful/getProduct?id=6UP5BHA2RE5C [36m304 [0m1.632 ms - -[0m
+[0mPOST /clayful/addCartItem [32m200 [0m335.343 ms - 591[0m
+[0mPOST /clayful/getCart [32m200 [0m98.259 ms - 8096[0m
+{ currency: 'KRW',
+  paymentMethod: 'clayful-iamport',
+  address: 
+   { shipping: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 강동구 고덕로 183 (고덕동)',
+        state: '서울 강동구 고덕로 183 (고덕동)',
+        postcode: '05235',
+        address1: '서울 강동구 고덕로 183 (고덕동)',
+        address2: '오오오',
+        mobile: '01055026392' },
+     billing: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 강동구 고덕로 183 (고덕동)',
+        state: '서울 강동구 고덕로 183 (고덕동)',
+        postcode: '05235',
+        address1: '서울 강동구 고덕로 183 (고덕동)',
+        address2: '오오오',
+        mobile: '01055026392' } } }
+{ status: 201,
+  data: 
+   { order: 
+      { currency: [Object],
+        tax: [Object],
+        customer: [Object],
+        address: [Object],
+        total: [Object],
+        synced: true,
+        done: false,
+        tags: [],
+        cancellation: null,
+        request: null,
+        receivedAt: null,
+        syncTriedAt: null,
+        items: [Array],
+        language: 'ko',
+        status: 'placed',
+        shipments: [Array],
+        _id: 'LF7BD3BGNQFP',
+        fulfillments: [],
+        refunds: [],
+        transactions: [Array],
+        meta: {},
+        createdAt: '2018-11-04T16:52:33.932Z',
+        updatedAt: '2018-11-04T16:52:33.932Z' } },
+  headers: 
+   { 'access-control-allow-credentials': 'true',
+     'access-control-expose-headers': 'WWW-Authenticate,Server-Authorization',
+     'cache-control': 'no-cache',
+     'content-currency': 'KRW',
+     'content-language': 'ko',
+     'content-time-zone': 'Asia/Seoul',
+     'content-type': 'application/json; charset=utf-8',
+     date: 'Sun, 04 Nov 2018 16:52:33 GMT',
+     location: '',
+     server: 'nginx/1.12.1',
+     vary: 'origin,accept-encoding',
+     'content-length': '1105',
+     connection: 'Close' } }
+[0mPOST /clayful/checkoutLogin [32m200 [0m274.303 ms - 2979[0m
+(node:14740) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:14740) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14740) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:14740) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:14740) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+[0mPOST /clayful/sendSms [0m- [0m- ms - -[0m
+[0mPOST /clayful/sendSms [0m- [0m- ms - -[0m
+(node:14740) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:14740) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 6)
+[0mPOST /clayful/sendSms [0m- [0m- ms - -[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU2YWU5MWUzN2NiNmJkYmE2Yzc2NWZmMGRkZmYwMTJjYWQyY2I1YzRjZDQ4NGYwZDk5NGUwMmMwZGRlZGM3NWYiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzNTIzNjYsImV4cCI6MTU0MTk1NzE2Niwic3ViIjoiNEU1QVNCQVpIREpRIn0.nJGzUbbk7HKMbIOIXzobh6pKcSZZnIssY_cMejbYs6U
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImM1MjhkZDAzNjc4MTYyYzUzNGVhNjBmNTM0OWQ2OGU1NWI4ZDZhOTk1NTdiZWZlOTc1NjA3ZmZmZTQ2MDA4NTEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzNTAyOTIsImV4cCI6MTU0MTk1NTA5Miwic3ViIjoiNEU1QVNCQVpIREpRIn0.-hILfMu-B2NnPwmr9wsnPLNJS8Af-Xncu7PtYy-Q-F0
+[0mPOST /clayful/_memberLogin [32m200 [0m405.679 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.786 ms - 37[0m
+(node:14740) UnhandledPromiseRejectionWarning: Error
+    at new ClayfulError (/home/miztalk-cms/node_modules/clayful/lib/clayful-error/index.js:5:16)
+    at axios.then.err (/home/miztalk-cms/node_modules/clayful/lib/plugins/request-axios/index.js:50:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:182:7)
+(node:14740) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 8)
+[0mPOST /clayful/sendSms [0m- [0m- ms - -[0m
+(node:18415) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+miztalk server - localhost:3030
+connected
+add post id : 6612
+add post id : 6591
+Mon, 05 Nov 2018 19:31:58 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:80:20
+Mon, 05 Nov 2018 19:31:58 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:81:28
+(node:18415) DeprecationWarning: collection.count is deprecated, and will be removed in a future version. Use collection.countDocuments or collection.estimatedDocumentCount instead
+[0mGET /clayful/productList?page=1 [32m200 [0m12.146 ms - 102835[0m
+Mon, 05 Nov 2018 19:32:01 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:126:26
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [32m200 [0m2.207 ms - 12179[0m
+Mon, 05 Nov 2018 19:32:13 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:476:22
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m294.873 ms - 97[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m5.476 ms - -[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m339.398 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImM2ODQyYzM1MmY3MWI3NGQwMGUwMWU1MzFmMzI1MzEyYzhhMTgxZThiODljYjgxZDQ3MzU1NDA0YzY2YTlmOTgiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDY4MjEsImV4cCI6MTU0MjA1MTYyMSwic3ViIjoiNEU1QVNCQVpIREpRIn0.cWulJhJ3Ia2_7dWXaN8w8rnB7VZNpeZhRRBajXr45rg
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU2YWU5MWUzN2NiNmJkYmE2Yzc2NWZmMGRkZmYwMTJjYWQyY2I1YzRjZDQ4NGYwZDk5NGUwMmMwZGRlZGM3NWYiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzNTIzNjYsImV4cCI6MTU0MTk1NzE2Niwic3ViIjoiNEU1QVNCQVpIREpRIn0.nJGzUbbk7HKMbIOIXzobh6pKcSZZnIssY_cMejbYs6U
+[0mPOST /clayful/_memberLogin [32m200 [0m514.917 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.823 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.290 ms - 37[0m
+naver
+[0mGET /clayful/loginSns?vendor=naver [32m200 [0m92.730 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjJkNDg2ZTA5NTJkY2MwYTc0MmMyNDMwNDkzMDdkZDRlNDUwOTU4MmE0NzAzNzYxZTYwNjUwYzgxMTUwODU0YjciLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDY4OTAsImV4cCI6MTU0MjA1MTY5MCwic3ViIjoiUEdVNVdGSzhGR0JFIn0.16pm5NlO9Zvw9ZbrEcJ8ogP-EhtFP8QIddLjtGEuqas
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjgyM2FjNDVmOTE5NmZkOGU2ZDM2YzMxNzE0ZGM4NzFiZDMwNTgzZWUwN2U5NmQyYWUxODNmZTIyNjUzNWFiZDEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDEzMjQ5NzIsImV4cCI6MTU0MTkyOTc3Miwic3ViIjoiUEdVNVdGSzhGR0JFIn0.40aG72HZvN9dPHgpPhWRMQ6-FQxqBdgIYsc56r0H9ic
+[0mPOST /clayful/_memberLogin [32m200 [0m64.232 ms - 804[0m
+[0mGET /clayful/productList?page=1 [32m200 [0m6.026 ms - 102835[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m56.844 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImFjZjI5ODFhZDU3MmI1Y2VmZTYzOWY2OGZjZGE5YTkyODIxZjY3NzdiNzJmMDllNmU5Y2U4N2NkMWI1MGZmYjQiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDY5NTgsImV4cCI6MTU0MjA1MTc1OCwic3ViIjoiNEU1QVNCQVpIREpRIn0.gQiRWSa1faHrjavTDHR6ihz_cFBHJz-JrMdP1OK45KA
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImM2ODQyYzM1MmY3MWI3NGQwMGUwMWU1MzFmMzI1MzEyYzhhMTgxZThiODljYjgxZDQ3MzU1NDA0YzY2YTlmOTgiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDY4MjEsImV4cCI6MTU0MjA1MTYyMSwic3ViIjoiNEU1QVNCQVpIREpRIn0.cWulJhJ3Ia2_7dWXaN8w8rnB7VZNpeZhRRBajXr45rg
+[0mPOST /clayful/_memberLogin [32m200 [0m69.130 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.236 ms - 37[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.916 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.780 ms - -[0m
+[0mPOST /clayful/addCartItem [32m200 [0m72.824 ms - 591[0m
+[0mPOST /clayful/getCart [32m200 [0m243.324 ms - 8725[0m
+{ currency: 'KRW',
+  paymentMethod: 'clayful-iamport',
+  address: 
+   { shipping: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 강서구 공항대로 6 (공항동)',
+        state: '서울 강서구 공항대로 6 (공항동)',
+        postcode: '07622',
+        address1: '서울 강서구 공항대로 6 (공항동)',
+        address2: 'ㅇ엉응',
+        mobile: '01055026392' },
+     billing: 
+      { name: [Object],
+        country: 'KR',
+        city: '서울 강서구 공항대로 6 (공항동)',
+        state: '서울 강서구 공항대로 6 (공항동)',
+        postcode: '07622',
+        address1: '서울 강서구 공항대로 6 (공항동)',
+        address2: 'ㅇ엉응',
+        mobile: '01055026392' } } }
+{ status: 201,
+  data: 
+   { order: 
+      { currency: [Object],
+        tax: [Object],
+        customer: [Object],
+        address: [Object],
+        total: [Object],
+        synced: true,
+        done: false,
+        tags: [],
+        cancellation: null,
+        request: null,
+        receivedAt: null,
+        syncTriedAt: null,
+        items: [Array],
+        language: 'ko',
+        status: 'placed',
+        shipments: [Array],
+        _id: 'P9C3GSCPKD4T',
+        fulfillments: [],
+        refunds: [],
+        transactions: [Array],
+        meta: {},
+        createdAt: '2018-11-05T19:43:17.315Z',
+        updatedAt: '2018-11-05T19:43:17.315Z' } },
+  headers: 
+   { 'access-control-allow-credentials': 'true',
+     'access-control-expose-headers': 'WWW-Authenticate,Server-Authorization',
+     'cache-control': 'no-cache',
+     'content-currency': 'KRW',
+     'content-language': 'ko',
+     'content-time-zone': 'Asia/Seoul',
+     'content-type': 'application/json; charset=utf-8',
+     date: 'Mon, 05 Nov 2018 19:43:17 GMT',
+     location: '',
+     server: 'nginx/1.12.1',
+     vary: 'origin,accept-encoding',
+     'transfer-encoding': 'chunked',
+     connection: 'Close' } }
+[0mPOST /clayful/checkoutLogin [32m200 [0m255.725 ms - 2983[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.464 ms - 37[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.958 ms - -[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m165.533 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImRjZDNjMGNjN2UxNzliNzhjOTAyZTYwNTdkYjJhOWUwMjViYjE0MWRkM2ZmMWNmOGVmMDRkNzNhMzVhNmM2N2EiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcwMjYsImV4cCI6MTU0MjA1MTgyNiwic3ViIjoiNEU1QVNCQVpIREpRIn0.uTCsK65Gl8eAEDlSPWNduQouzr5Plwi6iH1DCf1LAkI
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImFjZjI5ODFhZDU3MmI1Y2VmZTYzOWY2OGZjZGE5YTkyODIxZjY3NzdiNzJmMDllNmU5Y2U4N2NkMWI1MGZmYjQiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDY5NTgsImV4cCI6MTU0MjA1MTc1OCwic3ViIjoiNEU1QVNCQVpIREpRIn0.gQiRWSa1faHrjavTDHR6ihz_cFBHJz-JrMdP1OK45KA
+[0mPOST /clayful/_memberLogin [32m200 [0m55.435 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.686 ms - 37[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m6.079 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.320 ms - 37[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m445.991 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjUyNzdmNGE4MGNmMDcwZTNmOTQ4ZjdmODM3ZDliYTdjYjU2YmMwM2MxYzUwMDg3NzdkZmI1MjMxMzE0NzY0ZTIiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcwMzksImV4cCI6MTU0MjA1MTgzOSwic3ViIjoiNEU1QVNCQVpIREpRIn0.QfXUET0cydf7XZGA597r8eHEhgk9nSUsbkZnSpvUnEw
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImRjZDNjMGNjN2UxNzliNzhjOTAyZTYwNTdkYjJhOWUwMjViYjE0MWRkM2ZmMWNmOGVmMDRkNzNhMzVhNmM2N2EiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcwMjYsImV4cCI6MTU0MjA1MTgyNiwic3ViIjoiNEU1QVNCQVpIREpRIn0.uTCsK65Gl8eAEDlSPWNduQouzr5Plwi6iH1DCf1LAkI
+[0mPOST /clayful/_memberLogin [32m200 [0m55.057 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.328 ms - 37[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.799 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.510 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.271 ms - 37[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m47.571 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImNjYmNkODdiY2ZlY2Y2OGVmYjhjZDU3YmE4ZmI5NjFmYTE0NGE4NGQ4NGU3NTg1YWM4OWFmNjdiMGRjZGFhNDUiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcwNjIsImV4cCI6MTU0MjA1MTg2Miwic3ViIjoiNEU1QVNCQVpIREpRIn0.Hc6zZzkdrWYXnD_EgmMtnWwKHZjmaUeDWij0WC2QWKE
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjUyNzdmNGE4MGNmMDcwZTNmOTQ4ZjdmODM3ZDliYTdjYjU2YmMwM2MxYzUwMDg3NzdkZmI1MjMxMzE0NzY0ZTIiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcwMzksImV4cCI6MTU0MjA1MTgzOSwic3ViIjoiNEU1QVNCQVpIREpRIn0.QfXUET0cydf7XZGA597r8eHEhgk9nSUsbkZnSpvUnEw
+[0mPOST /clayful/_memberLogin [32m200 [0m40.491 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.300 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.372 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.754 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.352 ms - 37[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m335.323 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjM2NmExNjIzZmMyYWRmNGYyNjY2Y2ExY2I0N2NkYWRlZmI3OTBiMTU0ZGRlYzM5M2FkOTFmNGJiZGE4MTBiYWYiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcwOTUsImV4cCI6MTU0MjA1MTg5NSwic3ViIjoiNEU1QVNCQVpIREpRIn0.DgB3fryiS-ASfOny7v4MblruSs2SG8TEMTT5KO5T-gw
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImNjYmNkODdiY2ZlY2Y2OGVmYjhjZDU3YmE4ZmI5NjFmYTE0NGE4NGQ4NGU3NTg1YWM4OWFmNjdiMGRjZGFhNDUiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcwNjIsImV4cCI6MTU0MjA1MTg2Miwic3ViIjoiNEU1QVNCQVpIREpRIn0.Hc6zZzkdrWYXnD_EgmMtnWwKHZjmaUeDWij0WC2QWKE
+[0mPOST /clayful/_memberLogin [32m200 [0m46.516 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.787 ms - 37[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.951 ms - -[0m
+Mon, 05 Nov 2018 19:45:10 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/clayful.js:589:22
+[0mGET /clayful/getWishlist?id=4E5ASBAZHDJQ [32m200 [0m2.386 ms - 30[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.190 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.340 ms - 37[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m54.434 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVlMGJiNTgzZGEwMWYzYmU5NDRiNGM4ODM0NjhjM2E5NWU5YmJmM2Q5MTlkZmZmYjIwZmE1YzIxMDMzMWZmMmEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcxMjYsImV4cCI6MTU0MjA1MTkyNiwic3ViIjoiNEU1QVNCQVpIREpRIn0.dQSZT1FAS5R1_Q8q7HysNB0w2lZdCTb05EWYvIgrEhQ
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjM2NmExNjIzZmMyYWRmNGYyNjY2Y2ExY2I0N2NkYWRlZmI3OTBiMTU0ZGRlYzM5M2FkOTFmNGJiZGE4MTBiYWYiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcwOTUsImV4cCI6MTU0MjA1MTg5NSwic3ViIjoiNEU1QVNCQVpIREpRIn0.DgB3fryiS-ASfOny7v4MblruSs2SG8TEMTT5KO5T-gw
+[0mPOST /clayful/_memberLogin [32m200 [0m184.350 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.580 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.466 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.305 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.263 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.131 ms - 37[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m52.730 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjcyYWUyZDVjNTkzMDhlNjZiYzZlM2FiYTE4ODEwMDI3YjYzNzNlMWI1NWQwYWUxNGNmYTc1MWJkYTY5OWY3MDIiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcxNzEsImV4cCI6MTU0MjA1MTk3MSwic3ViIjoiNEU1QVNCQVpIREpRIn0.rdcUGJF4B8Ly84wkxi67lO7d4kz4ad89QBs3qYM31ow
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVlMGJiNTgzZGEwMWYzYmU5NDRiNGM4ODM0NjhjM2E5NWU5YmJmM2Q5MTlkZmZmYjIwZmE1YzIxMDMzMWZmMmEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcxMjYsImV4cCI6MTU0MjA1MTkyNiwic3ViIjoiNEU1QVNCQVpIREpRIn0.dQSZT1FAS5R1_Q8q7HysNB0w2lZdCTb05EWYvIgrEhQ
+[0mPOST /clayful/_memberLogin [32m200 [0m55.396 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.849 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.399 ms - 37[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m347.176 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Ijc1NWY5MjA2MDBiNzIwYjA5NTcxZTc3NDFjMmMyYjc1ZjgwOTUzYzIwZTkwNmIxODBlMmRmMjZlNGY5YWQzMDEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcxOTksImV4cCI6MTU0MjA1MTk5OSwic3ViIjoiNEU1QVNCQVpIREpRIn0.RKriVcn7j29yUtsPjEAXwi_2cZ3lq8eL8tT6-GwnMK0
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjcyYWUyZDVjNTkzMDhlNjZiYzZlM2FiYTE4ODEwMDI3YjYzNzNlMWI1NWQwYWUxNGNmYTc1MWJkYTY5OWY3MDIiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDcxNzEsImV4cCI6MTU0MjA1MTk3MSwic3ViIjoiNEU1QVNCQVpIREpRIn0.rdcUGJF4B8Ly84wkxi67lO7d4kz4ad89QBs3qYM31ow
+[0mPOST /clayful/_memberLogin [32m200 [0m210.842 ms - 835[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.247 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.124 ms - 37[0m
+[0mPOST /clayful/memberCheck [32m200 [0m2.244 ms - 38[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m286.825 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjZkMzI2ZWRmNDQzZGI1YTQzODc5YjgzZjMxNjE4ZGQyNDg5ZDNhNjFmYzk5Y2Y3OWM3Yjk3OWEzNmFmMDcxYzgiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDc1NzYsImV4cCI6MTU0MjA1MjM3Niwic3ViIjoiSkRXSzhDR1gzWFJQIn0.jXEiAkpTzt4WcD-cItg1bDtHHzQ1m02fnHOlnyv8q1g
+{ _id: 'JDWK8CGX3XRP',
+  name: { first: 'Jinseop', last: 'Eom', full: 'Jinseop Eom' },
+  address: { primary: null, secondaries: [] },
+  connect: false,
+  verified: false,
+  groups: [],
+  userId: 'FM2VGYJEMY4C',
+  alias: 'Jinseop  Eom',
+  email: 'rnffufk@naver.com',
+  avatar: null,
+  gender: null,
+  birthdate: null,
+  country: null,
+  mobile: null,
+  phone: null,
+  language: null,
+  currency: null,
+  timezone: null,
+  deactivatedAt: null,
+  lastLoggedInAt: 
+   { raw: '2018-11-05T19:52:56.704Z',
+     formatted: '2018년 11월 6일 화요일',
+     ago: '몇 초 전' },
+  social: [ { vendor: 'facebook', id: '1602529989866659' } ],
+  meta: {},
+  createdAt: 
+   { raw: '2018-11-05T19:52:56.705Z',
+     formatted: '2018년 11월 6일 화요일',
+     ago: '몇 초 전' },
+  updatedAt: 
+   { raw: '2018-11-05T19:52:56.705Z',
+     formatted: '2018년 11월 6일 화요일',
+     ago: '몇 초 전' } }
+[0mPOST /clayful/_memberLogin [32m200 [0m139.426 ms - 832[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.778 ms - 37[0m
+naver
+[0mGET /clayful/loginSns?vendor=naver [32m200 [0m41.576 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImFlMjAwNTBlOTRkMzZkMTYxOWJkODM5NGE5Y2Q0YWRkMjU2YmE3YzAzOTg0N2Q2MjA5YWU5MmY5YzcxMzJjN2UiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDc1ODYsImV4cCI6MTU0MjA1MjM4Niwic3ViIjoiMjhWWTlSTkNWMjdDIn0.XL7yeZRp55aueLGHC9p1cUQ3zZymO1XJDkj8YfwXYfE
+{ _id: '28VY9RNCV27C',
+  name: { first: null, last: null, full: '엄진섭' },
+  address: { primary: null, secondaries: [] },
+  connect: false,
+  verified: false,
+  groups: [],
+  userId: 'U2ZRT8N3CP6R',
+  alias: null,
+  email: 'ejsseop@naver.com',
+  avatar: null,
+  gender: 'male',
+  birthdate: null,
+  country: null,
+  mobile: null,
+  phone: null,
+  language: null,
+  currency: null,
+  timezone: null,
+  deactivatedAt: null,
+  lastLoggedInAt: 
+   { raw: '2018-11-05T19:53:06.383Z',
+     formatted: '2018년 11월 6일 화요일',
+     ago: '몇 초 전' },
+  social: [ { vendor: 'naver', id: '83069015' } ],
+  meta: {},
+  createdAt: 
+   { raw: '2018-11-05T19:53:06.384Z',
+     formatted: '2018년 11월 6일 화요일',
+     ago: '몇 초 전' },
+  updatedAt: 
+   { raw: '2018-11-05T19:53:06.384Z',
+     formatted: '2018년 11월 6일 화요일',
+     ago: '몇 초 전' } }
+[0mPOST /clayful/_memberLogin [32m200 [0m594.421 ms - 805[0m
+[0mPOST /clayful/nicknameCheck [32m200 [0m1.158 ms - 33[0m
+Mon, 05 Nov 2018 19:53:17 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/sms.js:91:24
+{ result_code: '1',
+  message: 'success',
+  msg_id: '25042391',
+  error_cnt: 0,
+  success_cnt: 1,
+  msg_type: 'SMS' }
+[0mGET /sms/sendOtp?phonenum=01055026392 [36m304 [0m210.643 ms - -[0m
+Mon, 05 Nov 2018 19:53:30 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/sms.js:43:24
+Mon, 05 Nov 2018 19:53:30 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/sms.js:44:24
+12.897
+[0mGET /sms/verifyOtp?phonenum=01055026392&code=5005 [32m200 [0m2.371 ms - 39[0m
+{ name: { first: null, last: null, full: '엄진섭' },
+  address: { primary: null, secondaries: [] },
+  connect: false,
+  verified: false,
+  groups: [],
+  userId: 'U2ZRT8N3CP6R',
+  alias: '엄진섭',
+  email: 'ejsseop@naver.com',
+  avatar: null,
+  gender: 'male',
+  birthdate: null,
+  country: null,
+  mobile: null,
+  phone: '01055026392',
+  language: null,
+  currency: null,
+  timezone: null,
+  deactivatedAt: null,
+  lastLoggedInAt: '2018-11-05T19:53:06.383Z',
+  _id: '28VY9RNCV27C',
+  social: [ { vendor: 'naver', id: '83069015' } ],
+  meta: {},
+  createdAt: '2018-11-05T19:53:06.384Z',
+  updatedAt: '2018-11-05T19:53:33.929Z' }
+[0mPOST /clayful/_memberReg [32m200 [0m102.948 ms - 608[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.427 ms - 1192[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [32m200 [0m1.367 ms - 30[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.187 ms - 1192[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m1.308 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.174 ms - 1192[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m1.267 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.322 ms - 1192[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m1.211 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.627 ms - 1192[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m1.225 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.209 ms - 1192[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m1.194 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m6.520 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.418 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.233 ms - 1192[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m1.314 ms - -[0m
+Mon, 05 Nov 2018 19:53:59 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/posts.js:72:22
+Mon, 05 Nov 2018 19:53:59 GMT express deprecated req.param(name): Use req.params, req.body, or req.query instead at routes/posts.js:73:24
+[ { image: [],
+    category: 9091,
+    likelist: [],
+    rating: 5,
+    count: 0,
+    deleted: false,
+    _id: 5be09a9c2842b447efe2c523,
+    comments: [],
+    date: 2018-11-05T19:31:40.437Z,
+    updated: [],
+    postid: 6612,
+    __v: 0 } ]
+[0mGET /posts/post?postid=6612&category=9091 [32m200 [0m2.598 ms - 223[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.176 ms - 1192[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m1.761 ms - -[0m
+naver
+[0mGET /clayful/loginSns?vendor=naver [32m200 [0m421.000 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImJlNmRiODAwMmVmYTE3YWM3OTc2MWI3ZDk2M2U3NDllNDU0OGEwOTA5YzFiODcwMmNhZGFlYTllMTM4ODkwMmMiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDc2NDYsImV4cCI6MTU0MjA1MjQ0Niwic3ViIjoiMjhWWTlSTkNWMjdDIn0.210iKo1Adt1lgNInHdifmz9dIHgMm-vcqfR7KRohiFk
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImFlMjAwNTBlOTRkMzZkMTYxOWJkODM5NGE5Y2Q0YWRkMjU2YmE3YzAzOTg0N2Q2MjA5YWU5MmY5YzcxMzJjN2UiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDc1ODYsImV4cCI6MTU0MjA1MjM4Niwic3ViIjoiMjhWWTlSTkNWMjdDIn0.XL7yeZRp55aueLGHC9p1cUQ3zZymO1XJDkj8YfwXYfE
+[0mPOST /clayful/_memberLogin [32m200 [0m102.742 ms - 818[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.289 ms - 1432[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m5.541 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.542 ms - 1432[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m1.947 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.526 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.058 ms - 1432[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m1.110 ms - -[0m
+[ { image: [],
+    category: 9091,
+    likelist: [],
+    rating: 5,
+    count: 0,
+    deleted: false,
+    _id: 5be09a9c2842b447efe2c523,
+    comments: [],
+    date: 2018-11-05T19:31:40.437Z,
+    updated: [],
+    postid: 6612,
+    __v: 0 } ]
+[0mGET /posts/post?postid=6612&category=9091 [36m304 [0m1.415 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.699 ms - 1432[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m1.112 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m5.185 ms - -[0m
+facebook
+[0mGET /clayful/loginSns?vendor=facebook [32m200 [0m145.605 ms - 97[0m
+usertoken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImVmZDU1ZjU1OWI3NWZmMDRhNWNlM2I3ZTljMzAxN2RmMmU3ZDFiZDY5NGZmZTc4YTEyNTk0ZDk3MDM3ZmMxMWUiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDgwNDgsImV4cCI6MTU0MjA1Mjg0OCwic3ViIjoiSkRXSzhDR1gzWFJQIn0.JPnk8woDbNf_wPQ7OKoKWRGUQ4xtBPJJsZAmOLI3Xf0
+db token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjZkMzI2ZWRmNDQzZGI1YTQzODc5YjgzZjMxNjE4ZGQyNDg5ZDNhNjFmYzk5Y2Y3OWM3Yjk3OWEzNmFmMDcxYzgiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NDE0NDc1NzYsImV4cCI6MTU0MjA1MjM3Niwic3ViIjoiSkRXSzhDR1gzWFJQIn0.jXEiAkpTzt4WcD-cItg1bDtHHzQ1m02fnHOlnyv8q1g
+[0mPOST /clayful/_memberLogin [32m200 [0m565.349 ms - 829[0m
+[0mPOST /clayful/memberCheck [32m200 [0m2.612 ms - 37[0m
+naver
+[0mGET /clayful/loginSns?vendor=naver [32m200 [0m34.799 ms - 97[0m
+[0mPOST /clayful/memberCheck [32m200 [0m1.095 ms - 37[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.774 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.261 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m4.412 ms - -[0m
+[0mPOST /clayful/memberCheck [32m200 [0m2.791 ms - 37[0m
+[ { image: [],
+    category: 9091,
+    likelist: [],
+    rating: 5,
+    count: 0,
+    deleted: false,
+    _id: 5be09a9c2842b447efe2c523,
+    comments: [],
+    date: 2018-11-05T19:31:40.437Z,
+    updated: [],
+    postid: 6612,
+    __v: 0 } ]
+[0mGET /posts/post?postid=6612&category=9091 [32m200 [0m1.408 ms - 223[0m
+[0mPOST /clayful/memberCheck [32m200 [0m2.712 ms - 37[0m
+(node:18415) UnhandledPromiseRejectionWarning: SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (/home/miztalk-cms/batch/wordpressBatch.js:29:33)
+    at Request.self.callback (/home/miztalk-cms/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:180:13)
+    at Request.<anonymous> (/home/miztalk-cms/node_modules/request/request.js:1157:10)
+    at Request.emit (events.js:180:13)
+    at IncomingMessage.<anonymous> (/home/miztalk-cms/node_modules/request/request.js:1079:12)
+    at Object.onceWrapper (events.js:272:13)
+    at IncomingMessage.emit (events.js:185:15)
+    at endReadableNT (_stream_readable.js:1106:12)
+    at process._tickCallback (internal/process/next_tick.js:178:19)
+(node:18415) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:18415) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:18415) UnhandledPromiseRejectionWarning: SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (/home/miztalk-cms/batch/wordpressBatch.js:29:33)
+    at Request.self.callback (/home/miztalk-cms/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:180:13)
+    at Request.<anonymous> (/home/miztalk-cms/node_modules/request/request.js:1157:10)
+    at Request.emit (events.js:180:13)
+    at IncomingMessage.<anonymous> (/home/miztalk-cms/node_modules/request/request.js:1079:12)
+    at Object.onceWrapper (events.js:272:13)
+    at IncomingMessage.emit (events.js:185:15)
+    at endReadableNT (_stream_readable.js:1106:12)
+    at process._tickCallback (internal/process/next_tick.js:178:19)
+(node:18415) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[0mPOST /clayful/memberCheck [32m200 [0m2.903 ms - 1432[0m
+[0mGET /clayful/getWishlist?id=28VY9RNCV27C [36m304 [0m2.950 ms - -[0m
+[0mGET /clayful/productList?page=1 [36m304 [0m5.106 ms - -[0m
+[0mGET /clayful/getProduct?id=8HFML4FW7Y44 [36m304 [0m1.394 ms - -[0m
+(node:18415) UnhandledPromiseRejectionWarning: SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (/home/miztalk-cms/batch/wordpressBatch.js:29:33)
+    at Request.self.callback (/home/miztalk-cms/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:180:13)
+    at Request.<anonymous> (/home/miztalk-cms/node_modules/request/request.js:1157:10)
+    at Request.emit (events.js:180:13)
+    at IncomingMessage.<anonymous> (/home/miztalk-cms/node_modules/request/request.js:1079:12)
+    at Object.onceWrapper (events.js:272:13)
+    at IncomingMessage.emit (events.js:185:15)
+    at endReadableNT (_stream_readable.js:1106:12)
+    at process._tickCallback (internal/process/next_tick.js:178:19)
+(node:18415) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+(node:18415) UnhandledPromiseRejectionWarning: SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (/home/miztalk-cms/batch/wordpressBatch.js:29:33)
+    at Request.self.callback (/home/miztalk-cms/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:180:13)
+    at Request.<anonymous> (/home/miztalk-cms/node_modules/request/request.js:1157:10)
+    at Request.emit (events.js:180:13)
+    at IncomingMessage.<anonymous> (/home/miztalk-cms/node_modules/request/request.js:1079:12)
+    at Object.onceWrapper (events.js:272:13)
+    at IncomingMessage.emit (events.js:185:15)
+    at endReadableNT (_stream_readable.js:1106:12)
+    at process._tickCallback (internal/process/next_tick.js:178:19)
+(node:18415) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
