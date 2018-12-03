@@ -5,6 +5,7 @@ var ClayfulService = require('../service/clayfulService');
 var SmsService = require('../service/smsService');
 var MemberContents = require('../models/memberSchema');
 var SmsContents = require('../models/smsSchema'); //db를 사용하기 위한 변수
+var xml = require('xml');
 
 /*clayful api로부터 받아 상품 업데이트하는 부분*/
 router.get('/_updateProduct', function(req, res) {
@@ -593,6 +594,43 @@ router.get('/getWishlist', function(req, res){
            data : memberContent.wishlist
         });
     });
+});
+
+
+router.get('/naverPay', function(req, res){
+    var req_product = req.param('product');
+    console.log(req_product);
+
+    var products = [];
+    var findId = [];
+
+    for(var i=0 ; i < req_product.length ; i++){
+        findId.push(req_product[i]['id']);
+    }
+
+    ProductContents.find({_id: {$in: findId}}, function(err, result){
+        console.log(result);
+    });
+
+// <product>
+//     <id>singleProductId</id>
+//     <name>상품singleProduct</name>
+//     <basePrice>1000</basePrice>
+//     <taxType />
+//     <infoUrl>http://www.iamport.kr/product/detail</infoUrl>
+// <imageUrl>http://www.iamport.kr/product/detail/thumbnail</imageUrl>
+// <status>ON_SALE</status>
+//     <shippingPolicy>
+//     <groupId />
+//     <method>DELIVERY</method>
+//     <feeType>FREE</feeType>
+//     <feePayType>FREE</feePayType>
+//     <feePrice>0</feePrice>
+//     </shippingPolicy>
+//     </product>
+
+    res.set('Content-Type', 'text/xml');
+    res.send(xml(req_product));
 });
 
 module.exports = router;
