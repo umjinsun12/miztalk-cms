@@ -1,6 +1,7 @@
 var express = require('express');
 var BoardContents = require('../models/boardsSchema'); //db를 사용하기 위한 변수
 var BoardCategory = require('../constant/boardCategory');
+var MemberContents = require('../models/memberSchema');
 var request = require('request');
 var fs = require('fs');
 var multer = require('multer'); // 파일 저장을 위한  multer
@@ -121,6 +122,7 @@ router.post('/', upload.array('UploadFile'),function(req, res){
     var addNewWriter;
     var addNewContent = req.body.addContents;
     var userToken = req.body.userToken;
+    var userId = req.body.userId;
     var addCategory = req.body.addCategory;
     var upFile = req.files; // 업로드 된 파일을 받아옴
     if(addNewTitle == undefined  || addNewContent == undefined || userToken == undefined)
@@ -130,9 +132,9 @@ router.post('/', upload.array('UploadFile'),function(req, res){
     var modContent = req.body.modContents;
     var modId = req.body.modId;
 
-    validateToken(userToken).then(function(data){
+    validateMember(userId, userToken).then(function(data){
         if(mode == 'add') {
-            addNewWriter = data.user.display_name; // 유저 데이터를 신뢰하지 않는다.
+            addNewWriter = data.name; // 유저 데이터를 신뢰하지 않는다.
             if (isSaved(upFile)) { // 파일이 제대로 업로드 되었는지 확인 후 디비에 저장시키게 됨
                 addBoard(addNewTitle, addNewWriter, addNewContent, addCategory, upFile);
                 res.json({
@@ -159,6 +161,7 @@ router.post('/', upload.array('UploadFile'),function(req, res){
         });
         throw new Error(err);
     });
+
 });
 
 router.get('/showReview', function(req,res){
@@ -200,6 +203,7 @@ router.post('/showReview', upload.array('UploadFile'),function(req, res){
     var addNewWriter;
     var addNewContent = req.body.addContents;
     var userToken = req.body.userToken;
+    var userId = req.body.userId;
     var addCategory = 9090;
     var postid = req.body.postid;
     var upFile = req.files; // 업로드 된 파일을 받아옴
@@ -211,9 +215,9 @@ router.post('/showReview', upload.array('UploadFile'),function(req, res){
     var modId = req.body.modId;
     var modRating = req.body.modRating;
 
-    validateToken(userToken).then(function(data){
+    validateMember(userId,userToken).then(function(data){
         if(mode == 'add') {
-            addNewWriter = data.user.display_name; // 유저 데이터를 신뢰하지 않는다.
+            addNewWriter = data.name; // 유저 데이터를 신뢰하지 않는다.
             if (isSaved(upFile)) { // 파일이 제대로 업로드 되었는지 확인 후 디비에 저장시키게 됨
                 addReview(addNewWriter, addNewContent, addCategory, rating, postid, upFile);
                 res.json({
@@ -283,11 +287,12 @@ router.post('/reply', function(req, res){
     var reply_comment = req.body.replyComment;
     var reply_id = req.body.replyId;
     var userToken = req.body.userToken;
+    var userId = req.body.userId;
     if(reply_comment == undefined || reply_id == undefined )
         throw new Error('fail_parameter_null');
 
-    validateToken(userToken).then(function(data) {
-        reply_writer = data.user.display_name; // 유저 데이터를 신뢰하지 않는다.
+    validateMember(userId,userToken).then(function(data) {
+        reply_writer = data.name; // 유저 데이터를 신뢰하지 않는다.
         addComment(reply_id, reply_writer, reply_comment);
         res.json({
             status: 'success',
@@ -308,11 +313,12 @@ router.post('/likes', function(req, res){
     // 좋아요 하는 부분
     var reply_id = req.body.likesId;
     var userToken = req.body.userToken;
+    var userId = req.body.userId;
     if(reply_id == undefined)
         throw new Error('fail_parameter_null');
 
-    validateToken(userToken).then(function(data) {
-        var reply_writer = data.user.display_name;
+    validateMember(userId, userToken).then(function(data) {
+        var reply_writer = data.name;
         BoardContents.findOne({_id: reply_id}, function(err, rawContent){
             if(err) throw err;
             var likechk = rawContent.likelist.indexOf(reply_writer);
@@ -436,6 +442,28 @@ function validateToken(userToken){
                  reject(resp);
              else
                  resolve(resp);
+        });
+    });
+}
+
+
+function validateMember(userId, userToken){
+    return new Promise(function(resolve, reject){
+        MemberContents.findOne({_id: userId},function(err, memberContent){
+            if(memberContent == null){
+                reject(null);
+            }else{
+                if(memberContent.token == userToken){
+                    if(memberContent.phone == null){
+                        reject(null);
+                    }else{
+                        resolve(memberContent);
+                    }
+                }
+                else{
+                    reject(null);
+                }
+            }
         });
     });
 }
