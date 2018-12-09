@@ -3,7 +3,7 @@ var request = require('request');
 var express = require('express');
 var BoardContents = require('../models/boardsSchema'); //db를 사용하기 위한 변수
 
-var WORDPRESS_REST_API_URL = "http://miztalk.kr/";
+var WORDPRESS_REST_API_URL = "http://genjo1517.cafe24.com";
 
 var scheduler = schedule.scheduleJob("*/5 * * * * *", function() {
 
@@ -20,7 +20,7 @@ var scheduler = schedule.scheduleJob("*/5 * * * * *", function() {
 function getPosts(){
 
     var options = {
-        url : 'http://miztalk.kr/wp-json/wp/v2/posts/?per_page=100',
+        url : WORDPRESS_REST_API_URL + '/wp-json/wp/v2/posts/?per_page=100',
         method : 'GET'
     };
     return new Promise(function(resolve, reject){

@@ -5,7 +5,7 @@ var ClayfulService = require('../service/clayfulService');
 var SmsService = require('../service/smsService');
 var MemberContents = require('../models/memberSchema');
 var SmsContents = require('../models/smsSchema'); //db를 사용하기 위한 변수
-var xml = require('xml');
+var js2xmlparser = require('js2xmlparser');
 
 /*clayful api로부터 받아 상품 업데이트하는 부분*/
 router.get('/_updateProduct', function(req, res) {
@@ -599,7 +599,6 @@ router.get('/getWishlist', function(req, res){
 
 router.get('/naverPay', function(req, res){
     var req_product = req.param('product');
-    console.log(req_product);
 
     var products = [];
     var findId = [];
@@ -609,28 +608,67 @@ router.get('/naverPay', function(req, res){
     }
 
     ProductContents.find({_id: {$in: findId}}, function(err, result){
-        console.log(result);
+        for(var i=0; i < result.length ; i++){
+            var productData = JSON.parse(result[i].data);
+            var naver_shipping = productData.shipping.methods[0].name.split('_');
+            var naver_param = {
+                id : productData._id,
+                name : productData.name,
+                basePrice : productData.price.sale.raw,
+                taxType : 'TAX_FREE', //TAX or TAX_FREE
+                infoUrl : "http://hotdealelf.com/#/tabs/%ec%87%bc%ed%95%91/shopping/" + productData._id,
+                imageUrl : productData.thumbnail.url,
+                status : 'ON_SALE',
+                shippingPolicy : {
+                    groupId : "shipping-a",
+                    method : "DELIVERY", //DELIVERY(택배·소포·등기), QUICK_SVC(퀵 서비스), DIRECT_DELIVERY(직접 전달), VISIT_RECEIPT(방문 수령), NOTHING(배송 없음)
+                    baseFee : naver_shipping[0],
+                    feeRule : {
+                        surchargesByArea : [ //array or string(API)
+                            {area:"island", surcharge:naver_shipping[1]},
+                            {area:"jeju", surcharge:naver_shipping[1]}
+                        ]
+                    },
+                    feePayType : "PREPAYED" //PREPAYED(선불), CASH_ON_DELIVERY(착불)
+                }
+            };
+
+            if(productData.variants.length > 1){
+                naver_param.basePrice = 0;
+                naver_param.optionSupport = true;
+                var combinationItem = [];
+                var optionItem = {
+                    type : 'SELECT',
+                    name : '종류',
+                    value : []
+                };
+                for(var j=0 ; j < productData.variants.length ; j++){
+                    if(productData.variants[j].types.length != 0){
+                        optionItem.value.push({
+                            id : productData.variants[j].types[0].variation._id,
+                            text : productData.variants[j].types[0].variation.value
+                        });
+                        combinationItem.push({
+                            manageCode :  productData.variants[j].types[0].variation._id,
+                            options : [{
+                                name : productData.variants[j].types[0].variation.value,
+                                id : productData.variants[j].types[0].variation._id
+                            }]
+                        });
+                    }
+                }
+
+
+                naver_param.option = {
+                    optionItem : optionItem,
+                    combination : combinationItem
+                };
+            }
+            products.push(naver_param);
+        }
+        res.set('Content-Type', 'text/xml');
+        res.send(js2xmlparser.parse("products",{'product':products }));
     });
-
-// <product>
-//     <id>singleProductId</id>
-//     <name>상품singleProduct</name>
-//     <basePrice>1000</basePrice>
-//     <taxType />
-//     <infoUrl>http://www.iamport.kr/product/detail</infoUrl>
-// <imageUrl>http://www.iamport.kr/product/detail/thumbnail</imageUrl>
-// <status>ON_SALE</status>
-//     <shippingPolicy>
-//     <groupId />
-//     <method>DELIVERY</method>
-//     <feeType>FREE</feeType>
-//     <feePayType>FREE</feePayType>
-//     <feePrice>0</feePrice>
-//     </shippingPolicy>
-//     </product>
-
-    res.set('Content-Type', 'text/xml');
-    res.send(xml(req_product));
 });
 
 module.exports = router;
